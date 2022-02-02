@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50c33305f7762d24a93b581491eeacaa, type: 3}
+  m_Name: trigo_0
+  m_EditorClassIdentifier: 
+  name: trigo
+  icon: {fileID: 21300000, guid: 880f6f84e89eced4b9909e32e2cb5008, type: 3}
+  age: 1
+  size: {x: 1, y: 1}
+  stages:
+  - {fileID: 2091393779286557919, guid: 0268f16f070883a43b53c0dd5d558e0f, type: 3}
+  - {fileID: 8893768911827710405, guid: 3483fb81f19010c46ac60ef2e9d96259, type: 3}
+  - {fileID: 1292008994688888075, guid: 6daf8a95949906a42b7942ea4f365633, type: 3}
+  colisions: 000101
+  ph_ideal: 0

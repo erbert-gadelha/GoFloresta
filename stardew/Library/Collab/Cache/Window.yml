@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 61
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffe70aba2e7074048aca5de573b64a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SimpleSelectedItems:
+    m_Keys:
+    - Assets/Scenes/testes.unity
+    - Assets/Scripts/HUD.cs
+    - Assets/Scripts/HUD.cs.meta
+    - Assets/Scripts/Inventory.cs
+    - Assets/Scripts/Inventory.cs.meta
+    - Assets/Scripts/Item.cs
+    - Assets/Scripts/Moviment_2.cs
+    - Assets/Scripts/Status.cs
+    - Assets/Scripts/Tempo.cs
+    - Assets/Sprites/sapa_tenis.png.meta
+    - ProjectSettings/ProjectSettings.asset
+    - 
+    m_Values: 000000000000000000000000
+  RevisionSummary: 
+  ChangesSearchValue: 
+  SelectedHistoryRevision: 
+  HistoryPageNumber: 0
+  TabIndex: 0
