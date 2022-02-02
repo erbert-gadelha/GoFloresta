@@ -47,7 +47,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
   sceneClasses:
-    Assets/Scenes/testes.unity:
+    Assets/Scenes/isom.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -81,45 +81,45 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1436}
+      Script: {instanceID: 1438}
     - Class: 114
-      Script: {instanceID: 1658}
+      Script: {instanceID: 1660}
     - Class: 114
-      Script: {instanceID: 1896}
+      Script: {instanceID: 1898}
     - Class: 114
-      Script: {instanceID: 1978}
+      Script: {instanceID: 1980}
     - Class: 114
-      Script: {instanceID: 2082}
+      Script: {instanceID: 2084}
     - Class: 114
-      Script: {instanceID: 2346}
+      Script: {instanceID: 2348}
     - Class: 114
-      Script: {instanceID: 2394}
+      Script: {instanceID: 2396}
     - Class: 114
-      Script: {instanceID: 2450}
+      Script: {instanceID: 2452}
     - Class: 114
-      Script: {instanceID: 2596}
+      Script: {instanceID: 2598}
     - Class: 114
-      Script: {instanceID: 2672}
+      Script: {instanceID: 2674}
     - Class: 114
-      Script: {instanceID: 2768}
+      Script: {instanceID: 2770}
     - Class: 114
-      Script: {instanceID: 2978}
+      Script: {instanceID: 2980}
     - Class: 114
-      Script: {instanceID: 3080}
+      Script: {instanceID: 3082}
     - Class: 114
-      Script: {instanceID: 3410}
+      Script: {instanceID: 3412}
     - Class: 114
-      Script: {instanceID: 3718}
+      Script: {instanceID: 3632}
     - Class: 114
-      Script: {instanceID: 4078}
+      Script: {instanceID: 3722}
     - Class: 114
-      Script: {instanceID: 4120}
+      Script: {instanceID: 4082}
     - Class: 114
-      Script: {instanceID: 4178}
+      Script: {instanceID: 4124}
     - Class: 114
-      Script: {instanceID: 4196}
+      Script: {instanceID: 4182}
     - Class: 114
-      Script: {instanceID: 42562}
+      Script: {instanceID: 4200}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -549,6 +549,12 @@ ScriptsOnlyBuild:
     className: PositionAsUV1
   - hash:
       serializedVersion: 2
+      Hash: 5ea30ef071323301d51285742c9c2d30
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HUD
+  - hash:
+      serializedVersion: 2
       Hash: 87ff43d2baf3385cba327d8f803a4ebb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -751,13 +757,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
-  - hash:
-      serializedVersion: 2
-      Hash: 5ea30ef071323301d51285742c9c2d30
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: HUD
   platform: 13
   scenePathNames:
-  - Assets/Scenes/testes.unity
-  playerPath: C:/Users/Erbert/Desktop/build [1_4_2].apk
+  - Assets/Scenes/isom.unity
+  playerPath: C:/Users/Erbert/OneDrive/Documentos/Unity/Jogo/apks/build.apk

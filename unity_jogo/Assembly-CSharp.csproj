@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{0044B2B0-0E8A-163C-D4AC-D051CAD94CAE}</ProjectGuid>
+    <ProjectGuid>{961B6EA6-1E9E-920D-633D-EF2FF7282339}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -68,11 +68,11 @@
     <Compile Include="Assets\Scripts\Board.cs" />
     <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\Moviment.cs" />
+    <Compile Include="Assets\Scripts\HUD.cs" />
     <Compile Include="Assets\Scripts\Tile.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Scripts\Tree.cs" />
     <Compile Include="Assets\Scripts\Controle.cs" />
-    <Compile Include="Assets\Scripts\HUD.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

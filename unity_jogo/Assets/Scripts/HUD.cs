@@ -118,6 +118,7 @@ public class HUD : MonoBehaviour
         if (plataforma == Plataforma.WINDOWS) {
             if (orientacao != estilo)
             {
+                orientation = -1;
                 switch (estilo)
                 {
                     case DeviceOrientation.Portrait:
@@ -176,7 +177,6 @@ public class HUD : MonoBehaviour
     {
         if (this.orientation == orientation)
             return;
-
 
         this.orientation = orientation;
         int aux = open_in;
