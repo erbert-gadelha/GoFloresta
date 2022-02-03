@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/isom.unity
-    guid: ff66a2a0c9e1fb74883b5c2edce90899
+    path: Assets/Scenes/teste_2.unity
+    guid: 48a40c6f4f4e3044c9b11422e2e86d5f
   m_configObjects: {}

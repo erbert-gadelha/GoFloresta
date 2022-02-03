@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Enxada
   description: "instrumento que consiste em uma l\xE2mina de metal, com um orif\xEDcio
     no gume."
-  id: 0
+  id: 1
   qntd: 0
   value: 0
   tipo: 0

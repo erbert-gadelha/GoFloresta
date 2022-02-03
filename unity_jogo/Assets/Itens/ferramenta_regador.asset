@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Regador
   description: "Se seu sonho \xE9 ter um jardim lindo e saud\xE1vel em casa e n\xE3o
     sabe por onde come\xE7ar, n\xF3s ajudamos!"
-  id: 1
+  id: 3
   qntd: 0
   value: 0
   tipo: 0

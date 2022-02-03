@@ -248,14 +248,13 @@ public class HUD : MonoBehaviour
     public void status_visibility(bool param)
     {
         _status_visibility = param;
-        _status[0].gameObject.SetActive(false);
-        _status[1].gameObject.SetActive(false);
+        _status[0].gameObject.SetActive(param);
+        _status[1].gameObject.SetActive(param);
     }
 
     public void change_to(Vector3 pos, bool visible)
     {
         _status_pos = pos;
-
         Tile tile = Board.board.get(pos);
 
         if (tile == null)
@@ -281,7 +280,6 @@ public class HUD : MonoBehaviour
         //slide.value = (aux1 / aux2);
         //img.sprite = aux.icon;
         images[0][0].sprite = aux.icon;
-
 
         status_visibility(visible);
     }
@@ -348,6 +346,7 @@ public class HUD : MonoBehaviour
                  texts[i][1].enabled = false;
                  texts[i][2].enabled = false;
                  texts[i][3].enabled = false;
+                Inventory.inventory.equipe(-1);
             }
 
             return;
@@ -374,6 +373,11 @@ public class HUD : MonoBehaviour
              texts[i][3].text = item.description;
             images[i][2].sprite = item.icon;
             images[i][3].sprite = item.icon;
+
+            if(item.tipo == Inventory.tipo.FERRAMENTA)
+                Inventory.inventory.equipe(item.id);
+            else
+                Inventory.inventory.equipe(-1);
         }
 
 

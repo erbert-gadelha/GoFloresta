@@ -73,6 +73,7 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Scripts\Tree.cs" />
     <Compile Include="Assets\Scripts\Controle.cs" />
+    <Compile Include="Assets\Scripts\Sound_player.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

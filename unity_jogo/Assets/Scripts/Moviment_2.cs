@@ -63,12 +63,15 @@ public class Moviment_2 : MonoBehaviour
 
         if (Application.platform == RuntimePlatform.Android)
                 controle = control.touch;
-        position = initial+Vector3.up* transform.position.y;
 
+        position = initial+Vector3.up * transform.position.y;
+        target.position = initial + new Vector3(0,0,-1);
         input = new Vector2();
         boneco = transform.GetChild(0);
         transform.position = position;
         able = true;
+
+        hud.change_to(target.position, false);
     }
 
     void Update()
@@ -120,13 +123,13 @@ public class Moviment_2 : MonoBehaviour
         if (rotate(input))
         {
             hud.change_to(target.position + offset, true);
-            pode_plantar = board.select(target.position, size, (int)((boneco.localEulerAngles.y / 90)));
+            pode_plantar = board.select(target.position, size, rotation);
             yield return new WaitForSeconds(0.15f);
         }
         else
         {
             hud.change_to(target.position + offset, true);
-            pode_plantar = board.select(target.position, size, (int)((boneco.localEulerAngles.y / 90)));
+            pode_plantar = board.select(target.position, size, rotation);
         }
 
 
@@ -278,6 +281,8 @@ public class Moviment_2 : MonoBehaviour
     }
     private void _roe()
     {
+        print("ta em roe papai");
+
         Vector3 aux_ = target.position + offset;
         Tile aux = board.get( (int)Mathf.Abs(aux_.x), (int)Mathf.Abs(aux_.z));
         if (aux == null)
@@ -286,6 +291,10 @@ public class Moviment_2 : MonoBehaviour
         if (aux.obj != null)
             return;
 
+        print("pasou dos if");
+
+        anim.SetTrigger("use");
+        Sound_player.player.play(0);
         aux.Arar();
     }
     private void _seed()
@@ -294,7 +303,8 @@ public class Moviment_2 : MonoBehaviour
             return;
 
         Vector3 aux_ = target.position + offset;
-        board.plant(seed, aux_, rotation);
+        if (board.plant(seed, aux_, rotation))
+            anim.SetTrigger("use");
 
         pode_plantar = board.select(target.position, size, rotation);
         hud.change_to(target.position + offset, true);
@@ -356,10 +366,10 @@ public class Moviment_2 : MonoBehaviour
 
             switch (item.id)
             {
-                case 0: //ENXADA
+                case 1: //ENXADA
                     _roe();
                     break;
-                case 1: //REGADOR
+                case 3: //REGADOR
                     _splash();
                     break;
             }
@@ -373,10 +383,18 @@ public class Moviment_2 : MonoBehaviour
     }
 
 
+
+
+    public void _zoom(int param)
+    {
+        Camera.main.orthographicSize += param;
+    }
+
     private void OnGUI()
     {
         GUI.skin.label.fontSize = 30;
         GUI.color = Color.yellow;
         GUI.Label(new Rect(10, 10, 200, 50), "fps: " + fps);
+
     }
 }

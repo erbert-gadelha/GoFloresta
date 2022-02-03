@@ -14,7 +14,7 @@ public class Tempo : MonoBehaviour
     List<Tile> plantas;
 
     [SerializeField]
-    public int hora = 7;
+    public int hora = 8;
     [SerializeField]
     float delay = 1;
 
@@ -43,24 +43,40 @@ public class Tempo : MonoBehaviour
     public void SetTo(int to)
     {
         hora = to;
+
         hr.eulerAngles = new Vector3(0, 0, -(hora * 720) / 24);
         for(int i = obj.childCount-1; i >= 0; i--)
             obj.GetChild(i).gameObject.SetActive(false);
 
 
-        if ((to > 4) & (to <= 8))         //MANHA
-            obj.GetChild(0).gameObject.SetActive(true);
-        else if ((to > 8) & (to <= 15))  //DIA
+        if ((to > 6) & (to <= 18))         //MANHA
             obj.GetChild(1).gameObject.SetActive(true);
-        else if ((to > 15) & (to <= 20))  //TARDE
-            obj.GetChild(2).gameObject.SetActive(true);
         else                             //NOITE
             obj.GetChild(3).gameObject.SetActive(true);
-        
+
+        //if ((to > 4) & (to <= 8))         //MANHA
+        //    obj.GetChild(0).gameObject.SetActive(true);
+        //else if ((to > 8) & (to <= 15))  //DIA
+        //    obj.GetChild(1).gameObject.SetActive(true);
+        //else if ((to > 15) & (to <= 20))  //TARDE
+        //    obj.GetChild(2).gameObject.SetActive(true);
+        //else                             //NOITE
+        //    obj.GetChild(3).gameObject.SetActive(true);
+
     }
 
     void Refresh()
     {
+        obj.GetChild(1).gameObject.SetActive(false);
+        obj.GetChild(3).gameObject.SetActive(false);
+
+        if ((hora > 6) & (hora <= 18))         //MANHA
+            obj.GetChild(1).gameObject.SetActive(true);
+        else                             //NOITE
+            obj.GetChild(3).gameObject.SetActive(true);
+        return;
+
+
         switch (hora)
         {
             case 5:
@@ -105,6 +121,8 @@ public class Tempo : MonoBehaviour
                     hora = 0;
 
                 hr.eulerAngles = new Vector3(0, 0, -(hora * 720) / 24);
+                Sound_player.player.play(2);
+
                 Skip();
                 Refresh();
             }
@@ -116,10 +134,11 @@ public class Tempo : MonoBehaviour
     }
 
 
-    /*
+    
     private void OnGUI()
     {
-        if (GUI.Button(new Rect(10, 70, 50, 30), "Skip"))
-            Skip();
-    }*/
+        if(obj.GetChild(3).gameObject.active)
+            if (GUI.Button(new Rect(50, 70, 80, 40), "Dormir"))
+                SetTo(8);
+    }
 }

@@ -8,6 +8,7 @@ ScriptsOnlyBuild:
     - Inventory
     - Item
     - Moviment_2
+    - Sound_player
     - Tempo
     - Tile
     - Tree
@@ -26,11 +27,16 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
-    Unity.CollabProxy.Editor.dll:
-    - Unity.Cloud.Collaborate.UserInterface.CollaborateWindow
-    - Unity.Cloud.Collaborate.UserInterface.WindowCache
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -47,7 +53,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
   sceneClasses:
-    Assets/Scenes/isom.unity:
+    Assets/Scenes/teste_2.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -71,6 +77,8 @@ ScriptsOnlyBuild:
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
@@ -120,6 +128,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 4182}
     - Class: 114
       Script: {instanceID: 4200}
+    - Class: 114
+      Script: {instanceID: 70142}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -128,8 +138,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 196
       Script: {instanceID: 0}
-    - Class: 212
-      Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
     - Class: 222
@@ -137,6 +145,10 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 258
+      Script: {instanceID: 0}
+    - Class: 850595691
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -315,7 +327,7 @@ ScriptsOnlyBuild:
     className: EnumerableTestState
   - hash:
       serializedVersion: 2
-      Hash: ce2a45ac8f9e3b370840c450aef073f3
+      Hash: 80cd2a1ff89a2b02f499721f511bda19
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Inventory
@@ -369,7 +381,7 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: 0a85f8e271223a97b1669e1fb2ffca0e
+      Hash: 008bb488279b9393cfecb1ac7e4bcf81
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Board
@@ -561,7 +573,7 @@ ScriptsOnlyBuild:
     className: AudioPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: d8b2391509a957a18ca6e1d5752d81e3
+      Hash: 10ceb29ed84c0267ae8c91245b7d997c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Tile
@@ -757,7 +769,13 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
+  - hash:
+      serializedVersion: 2
+      Hash: efdb2ed81c52419941c65f2ff03b7294
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Sound_player
   platform: 13
   scenePathNames:
-  - Assets/Scenes/isom.unity
+  - Assets/Scenes/teste_2.unity
   playerPath: C:/Users/Erbert/OneDrive/Documentos/Unity/Jogo/apks/build.apk

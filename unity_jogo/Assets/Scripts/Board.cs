@@ -21,7 +21,7 @@ public class Board : MonoBehaviour
     Vector3Int offset;
 
     [SerializeField]
-    Material[] material;
+    Mesh[] material;
 
     GameObject[] ocupado;
     GameObject[] livre;
@@ -84,10 +84,11 @@ public class Board : MonoBehaviour
         if (!aux.arado | aux.obj != null)
             return false;
 
-
+        Sound_player.player.play(1);
         aux.childs = new Tile[(tree.size.x * tree.size.y)];
         int i = 0;
 
+        float _x = 0, _y = 0;
         for (int X = 0; X < tree.size.x; X++)
         {
             for (int Y = 0; Y < tree.size.y; Y++)
@@ -113,6 +114,10 @@ public class Board : MonoBehaviour
                     print("nulo aqui");
                     return false;
                 }
+
+                _x += aux.childs[i].position.x;
+                _y += aux.childs[i].position.y;
+
                 change_mat(aux.childs[i].position, materials.ocupado);
                 aux.childs[i].parent = aux;
                 i++;
@@ -120,6 +125,7 @@ public class Board : MonoBehaviour
         }
 
         aux.parent = null;
+        aux.center = new Vector3( _x/(tree.size.x * tree.size.y), 0, _y/(tree.size.x * tree.size.y));
         change_mat(aux.position, materials.arado);
 
         aux.tree = tree;
@@ -133,6 +139,8 @@ public class Board : MonoBehaviour
         return true;
     }
 
+
+    int random = 1;
     public void change_mat(Vector2Int pos, materials material)
     {
         Tile aux = get(pos.x, pos.y);
@@ -141,19 +149,28 @@ public class Board : MonoBehaviour
         {
             case materials.arado:
                 aux.arado = true;
-                aux.mesh.sharedMaterial = this.material[0];
+                //aux.mesh.sharedMaterial = this.material[0];
+                aux.mesh.mesh = this.material[0];
                 break;
             case materials.grama:
                 aux.arado = false;
-                aux.mesh.sharedMaterial = this.material[1];
+                //int i;
+                //i = ((pos.x + pos.y + 2) % 3) + 1;
+                //aux.mesh.mesh = this.material[i];
+
+                aux.mesh.mesh = this.material[random];
+                random++;
+                if (random >= this.material.Length)
+                    random = 1;
+                
                 break;
             case materials.molhado:
                 aux.arado = true;
-                aux.mesh.sharedMaterial = this.material[2];
+                aux.mesh.mesh = this.material[0];
                 break;
             case materials.ocupado:
                 aux.arado = true;
-                aux.mesh.sharedMaterial = this.material[3];
+                aux.mesh.mesh = this.material[0];
                 break;
         }
     }
