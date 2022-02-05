@@ -5,12 +5,15 @@ using UnityEngine;
 public class Moviment_2 : MonoBehaviour
 {
     public static Moviment_2 player;
-    [HideInInspector]
-    public Item item;
+
+    //[HideInInspector]
+    //public Item item;
+
     [HideInInspector]
     public Tree seed;
 
-
+    [SerializeField]
+    Item item;
 
 
     enum control { touch, teclado }
@@ -45,11 +48,12 @@ public class Moviment_2 : MonoBehaviour
     int fps;
 
 
-    bool pode_plantar;
+    bool can_use;
 
 
     private void Awake()
     {
+        item = null;
         axis = new Vector3[2];
         cam = transform.GetChild(1);
         player = this;
@@ -97,7 +101,7 @@ public class Moviment_2 : MonoBehaviour
                 _cam(-1);
 
             if (Input.GetKeyDown(KeyCode.Space))
-                _roe();
+                _use();
         }
     }
 
@@ -123,13 +127,13 @@ public class Moviment_2 : MonoBehaviour
         if (rotate(input))
         {
             hud.change_to(target.position + offset, true);
-            pode_plantar = board.select(target.position, size, rotation);
+            can_use = Board.board.select(target.position, item, rotation);
             yield return new WaitForSeconds(0.15f);
         }
         else
         {
             hud.change_to(target.position + offset, true);
-            pode_plantar = board.select(target.position, size, rotation);
+            can_use = Board.board.select(target.position, item, rotation);
         }
 
 
@@ -138,7 +142,7 @@ public class Moviment_2 : MonoBehaviour
             rotate(input);
 
             aux = (input.x * axis[0] + input.y * axis[1]);
-            Tile tile = board.get((int)(position.x + offset.x + aux.x), (int)(position.z + aux.z + offset.z));
+            Tile tile = Board.board.get((int)(position.x + offset.x + aux.x), (int)(position.z + aux.z + offset.z));
 
             if (tile == null)
             {
@@ -146,7 +150,7 @@ public class Moviment_2 : MonoBehaviour
                 target.position = position + aux;
 
                 hud.status_visibility(false);
-                board.undo();
+                Board.board.undo();
 
                 yield return new WaitForSeconds(0.15f);
                 continue;
@@ -157,12 +161,12 @@ public class Moviment_2 : MonoBehaviour
                 target.position = position + aux;
 
                 hud.change_to(target.position + offset, true);
-                pode_plantar = board.select(target.position, size, rotation);
+                can_use = Board.board.select(target.position, item, rotation);
 
                 yield return new WaitForSeconds(0.15f);
                 continue;
             }
-            board.undo();
+            Board.board.undo();
 
 
             position += aux;
@@ -170,7 +174,7 @@ public class Moviment_2 : MonoBehaviour
             anim.SetBool("walk", true);
 
             hud.change_to(target.position, true);
-            pode_plantar = board.select(target.position, size, rotation);
+            can_use = Board.board.select(target.position, item, rotation);
 
             while (transform.position != position)
             {
@@ -183,7 +187,7 @@ public class Moviment_2 : MonoBehaviour
         }
 
         yield return new WaitForFixedUpdate();
-        pode_plantar = board.select(target.position, size, rotation);
+        can_use = Board.board.select(target.position, item, rotation);
         anim.SetBool("walk", false);
         able = true;
     }
@@ -279,111 +283,30 @@ public class Moviment_2 : MonoBehaviour
 
         StartCoroutine(Cam_rotate(dir));
     }
-    private void _roe()
-    {
-        print("ta em roe papai");
-
-        Vector3 aux_ = target.position + offset;
-        Tile aux = board.get( (int)Mathf.Abs(aux_.x), (int)Mathf.Abs(aux_.z));
-        if (aux == null)
-            return;
-
-        if (aux.obj != null)
-            return;
-
-        print("pasou dos if");
-
-        anim.SetTrigger("use");
-        Sound_player.player.play(0);
-        aux.Arar();
-    }
-    private void _seed()
-    {
-        if (!pode_plantar)
-            return;
-
-        Vector3 aux_ = target.position + offset;
-        if (board.plant(seed, aux_, rotation))
-            anim.SetTrigger("use");
-
-        pode_plantar = board.select(target.position, size, rotation);
-        hud.change_to(target.position + offset, true);
-    }
-    private void _splash()
-    {
-        Vector3 aux_ = target.position + offset;
-        Tile aux = board.get(aux_);
-        if (aux == null)
-            return;
-
-         aux.Regar();
-    }
 
     public void equipar(Item item)
     {
-        if (item == null)
-        {
-            size = Vector2.zero;
-            this.item = null;
-            seed = null;
-
-            return;
-        }
-
-        switch (item.tipo)
-        {
-            case Inventory.tipo.FERRAMENTA:
-                size = Vector2.one;
-                this.item = item;
-                seed = null;
-                break;
-            case Inventory.tipo.SEMENTE:
-                size = item.seed.size;
-                this.item = null;
-                seed = item.seed;
-                break;
-        }
-
-        _select();
+        this.item = item;
+        can_use = Board.board.select(target.position, item, rotation);
     }
 
-    public Vector2 size;
     public void _use()
     {
-        if (seed != null)
+        if (item == null)
+            return;
+
+        if (can_use)
         {
-            if (!pode_plantar)
-                return;
-            _seed();
-        }
-
-        else if (item != null)
-        {
-
-            Debug.LogWarning("Isso e temporario");
-            if (!pode_plantar)
-                return;
-
-            switch (item.id)
+            if (item.usar(target.position, rotation))
             {
-                case 1: //ENXADA
-                    _roe();
-                    break;
-                case 3: //REGADOR
-                    _splash();
-                    break;
+                anim.SetTrigger("use");
+                Sound_player.player.play(item.sound);
+                hud.change_to(target.position, true);
+                can_use = Board.board.select(target.position, item, rotation);
             }
         }
 
     }
-
-    public void _select()
-    {
-        pode_plantar = board.select(target.position, size, rotation);
-    }
-
-
-
 
     public void _zoom(int param)
     {

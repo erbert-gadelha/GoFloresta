@@ -66,14 +66,15 @@
     <Compile Include="Assets\Scripts\Inventory.cs" />
     <Compile Include="Assets\Scripts\Tile1.cs" />
     <Compile Include="Assets\Scripts\Board.cs" />
-    <Compile Include="Assets\Scripts\Item.cs" />
+    <Compile Include="Assets\Scripts\Sound_player.cs" />
+    <Compile Include="Assets\Scripts\item.cs" />
     <Compile Include="Assets\Scripts\Moviment.cs" />
     <Compile Include="Assets\Scripts\HUD.cs" />
     <Compile Include="Assets\Scripts\Tile.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Scripts\Tree.cs" />
     <Compile Include="Assets\Scripts\Controle.cs" />
-    <Compile Include="Assets\Scripts\Sound_player.cs" />
+    <Compile Include="Assets\Scripts\Item1.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -7,17 +7,22 @@ public class Tempo : MonoBehaviour
 {
 
     [SerializeField]
-    Transform obj;
+    Animator obj;
 
+    bool running = false;
     public static Tempo tempo;
     [SerializeField]
     List<Tile> plantas;
 
     [SerializeField]
-    public int hora = 8;
+    public int hora = 8, mnt = 0;
     [SerializeField]
     float delay = 1;
 
+    private void Awake()
+    {
+        tempo = this;
+    }
 
     void Start() {
         SetTo(hora);
@@ -25,7 +30,7 @@ public class Tempo : MonoBehaviour
         tempo = this;
         plantas = new List<Tile>();
 
-        StartCoroutine( _clock());
+        Running(true);
     }
 
     public void Add(Tile planta)
@@ -43,70 +48,59 @@ public class Tempo : MonoBehaviour
     public void SetTo(int to)
     {
         hora = to;
-
         hr.eulerAngles = new Vector3(0, 0, -(hora * 720) / 24);
-        for(int i = obj.childCount-1; i >= 0; i--)
-            obj.GetChild(i).gameObject.SetActive(false);
 
 
-        if ((to > 6) & (to <= 18))         //MANHA
-            obj.GetChild(1).gameObject.SetActive(true);
+        if ((to > 4) & (to <= 8))         //MANHA
+            obj.SetTrigger("dia");
+        else if ((to >= 15) & (to <= 20))  //TARDE
+            obj.SetTrigger("tarde");
         else                             //NOITE
-            obj.GetChild(3).gameObject.SetActive(true);
-
-        //if ((to > 4) & (to <= 8))         //MANHA
-        //    obj.GetChild(0).gameObject.SetActive(true);
-        //else if ((to > 8) & (to <= 15))  //DIA
-        //    obj.GetChild(1).gameObject.SetActive(true);
-        //else if ((to > 15) & (to <= 20))  //TARDE
-        //    obj.GetChild(2).gameObject.SetActive(true);
-        //else                             //NOITE
-        //    obj.GetChild(3).gameObject.SetActive(true);
+            obj.SetTrigger("noite");
 
     }
 
     void Refresh()
     {
-        obj.GetChild(1).gameObject.SetActive(false);
-        obj.GetChild(3).gameObject.SetActive(false);
-
-        if ((hora > 6) & (hora <= 18))         //MANHA
-            obj.GetChild(1).gameObject.SetActive(true);
-        else                             //NOITE
-            obj.GetChild(3).gameObject.SetActive(true);
-        return;
-
-
         switch (hora)
         {
             case 5:
-                obj.GetChild(3).gameObject.SetActive(false);
-                obj.GetChild(0).gameObject.SetActive(true);
+                obj.SetTrigger("dia");
                 break;
-            case 8:
-                obj.GetChild(0).gameObject.SetActive(false);
-                obj.GetChild(1).gameObject.SetActive(true);
-                break;
-            case 15:
-                obj.GetChild(1).gameObject.SetActive(false);
-                obj.GetChild(2).gameObject.SetActive(true);
+            case 18:
+                obj.SetTrigger("tarde");
                 break;
             case 20:
-                obj.GetChild(2).gameObject.SetActive(false);
-                obj.GetChild(3).gameObject.SetActive(true);
+                obj.SetTrigger("noite");
                 break;
         }
 
     }
 
+    IEnumerator a;
+    public void Running(bool param)
+    {
+        if (param == running)
+            return;
+
+        running = param;
+
+        if (!running) {
+            StopCoroutine(a);
+        } else {
+            a = _clock();
+            StartCoroutine(a);
+        }
+    }
+
+
+
+
 
     
-
     [SerializeField]
     RectTransform hr, mn;
     IEnumerator _clock() {
-
-        int mnt = 0;
 
         while (true)
         {
@@ -137,7 +131,7 @@ public class Tempo : MonoBehaviour
     
     private void OnGUI()
     {
-        if(obj.GetChild(3).gameObject.active)
+        if((hora > 18) | (hora<5))
             if (GUI.Button(new Rect(50, 70, 80, 40), "Dormir"))
                 SetTo(8);
     }

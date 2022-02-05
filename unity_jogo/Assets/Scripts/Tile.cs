@@ -29,6 +29,7 @@ public class Tile : MonoBehaviour
     [HideInInspector]
     public Vector3 center;
 
+    public int madura;
 
 
 
@@ -65,6 +66,21 @@ public class Tile : MonoBehaviour
         Board.board.change_mat(position, Board.materials.molhado);
         molhado = true;
         return true;
+    }
+
+    public bool Podar()
+    {
+        if (tree.poldada == null)
+            return false;
+
+
+        Destroy(obj);
+        obj = Instantiate(tree.poldada);
+
+        currt_state--;
+        curnt_age--;
+
+        return false;
     }
 
     public bool Destruir()
@@ -106,6 +122,11 @@ public class Tile : MonoBehaviour
             Destroy(obj);
             obj = null;
         }
+
+        if (curnt_age == (tree.stages.Length - 1))
+            madura = 1;
+        else if (curnt_age >= tree.stages.Length)
+            madura = 2;
     }
 
     public void grow_to(int to)
@@ -133,19 +154,8 @@ public class Tile : MonoBehaviour
 
         if (tree != null)
         {
-            /*
-            Vector3 aux = Vector3.zero;
-            if (tree.size != Vector2.zero)
-            switch (rotation)
-            {
-                case 0: aux = new Vector3(tree.si); break;
-                case 1: break;
-                case 2: break;
-                case 3: break;
-            }*/
-
             obj = Instantiate(tree.stages[currt_state - 1], center, Quaternion.Euler(0, 90 * rotation, 0), transform);
-            //obj = Instantiate(tree.stages[currt_state - 1], transform.position, Quaternion.Euler(0, 90 * rotation, 0), transform);
+
             for (int i = 0; i < childs.Length; i++)
             {
                 childs[i].colision = tree.colisions[currt_state - 1];

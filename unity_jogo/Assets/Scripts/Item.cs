@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "item_", menuName = "Itens/Criar item", order = 2)]
-public class Item : ScriptableObject
+public class item : ScriptableObject
 {
     [Header("Status")]
     public Sprite icon;

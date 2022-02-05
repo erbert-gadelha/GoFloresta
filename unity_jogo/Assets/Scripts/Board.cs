@@ -9,7 +9,8 @@ public class Board : MonoBehaviour
     public enum materials { arado, grama, molhado, ocupado };
 
     [SerializeField]
-    public enum estados { grama, arado_seco, arado_molhado }
+    public enum state { ARADO, VAZIO, PLANTADO }
+
 
     [HideInInspector]
     public Tile[,] terrains;
@@ -23,12 +24,14 @@ public class Board : MonoBehaviour
     [SerializeField]
     Mesh[] material;
 
-    GameObject[] ocupado;
-    GameObject[] livre;
+
+
+    GameObject[] red;
+    GameObject[] grn;
+    GameObject[] wht;
 
     GameObject _hints;
-
-
+    GameObject [,] hint;
 
 
 
@@ -80,11 +83,10 @@ public class Board : MonoBehaviour
 
     public bool plant(Tree tree, Vector3 pos, int rotation)
     {
-        Tile aux = Board.board.get(pos);
+        Tile aux = board.get(pos);
         if (!aux.arado | aux.obj != null)
             return false;
 
-        Sound_player.player.play(1);
         aux.childs = new Tile[(tree.size.x * tree.size.y)];
         int i = 0;
 
@@ -120,6 +122,7 @@ public class Board : MonoBehaviour
 
                 change_mat(aux.childs[i].position, materials.ocupado);
                 aux.childs[i].parent = aux;
+
                 i++;
             }
         }
@@ -133,6 +136,7 @@ public class Board : MonoBehaviour
         aux.currt_state = 1;
         aux.rotation = rotation;
 
+        aux.madura = 0;
         Tempo.tempo.Add(aux);
         aux.Refresh();
 
@@ -149,16 +153,12 @@ public class Board : MonoBehaviour
         {
             case materials.arado:
                 aux.arado = true;
-                //aux.mesh.sharedMaterial = this.material[0];
                 aux.mesh.mesh = this.material[0];
                 break;
             case materials.grama:
                 aux.arado = false;
-                //int i;
-                //i = ((pos.x + pos.y + 2) % 3) + 1;
-                //aux.mesh.mesh = this.material[i];
-
                 aux.mesh.mesh = this.material[random];
+
                 random++;
                 if (random >= this.material.Length)
                     random = 1;
@@ -175,23 +175,35 @@ public class Board : MonoBehaviour
         }
     }
 
-    public bool select(Vector3 pos, Vector2 size, int rot)
+    public bool select(Vector3 pos, Item item, int rot)
     {
-        if (size == Vector2.zero)
+        if (item == null) {
+            undo();
             return false;
+        } else if (item.size == Vector2.zero) {
+            undo();
+            return false;
+        }
 
         if (_hints.activeInHierarchy)
             undo();
 
-        bool empty, retrn = true;
-        int index = 0;
+        bool retorno = true;
+        int index = 0, state = 0;
         Tile aux;
 
+        /*  
+         *  STATE
+         * 0 - branco
+         * 1 - verde
+         * 2 - vermelho
+         * 
+         */
 
         Vector3 temp = Vector3.zero;
-        for (int i = 0; i < size.x; i++)
+        for (int i = 0; i < item.size.x; i++)
         {
-            for (int j = 0; j < size.y; j++)
+            for (int j = 0; j < item.size.y; j++)
             {
                 switch (rot)
                 {
@@ -211,41 +223,63 @@ public class Board : MonoBehaviour
 
                 aux = get(temp + offset);
 
-                if (aux == null)
-                    empty = false;
-                else if(aux.obj != null | aux.parent != null)
-                    empty = false;
-                else
-                    empty = true;
-
-                if (empty)
-                {
-                    livre[index].transform.position = temp;
-                    livre[index].SetActive(true);
+                if (aux == null) {
+                    state = 2;
+                    retorno = false;
+                } else {
+                    switch (item.selec)
+                    {
+                        case Item.selecao.ARADO:
+                            if (aux.obj != null | aux.parent != null) {
+                                state = 2;
+                                retorno = false;
+                            } else if (aux.arado) {
+                                state = 1;
+                            } else {
+                                retorno = false;
+                                state = 0;
+                            }
+                            break;
+                        case Item.selecao.VAZIO:
+                            if (aux.obj != null | aux.parent != null) {
+                                state = 2;
+                                retorno = false;
+                            } else if (aux.arado) {
+                                state = 0;
+                                retorno = false;
+                            } else {
+                                state = 1;
+                            }
+                            break;
+                        case Item.selecao.PLANTADO:
+                            if (aux.obj != null | aux.parent != null) {
+                                state = 1;
+                            } else {
+                                state = 2;
+                                retorno = false;
+                            }
+                            break;
+                    }
                 }
-                else
-                {
-                    ocupado[index].transform.position = temp;
-                    ocupado[index].SetActive(true);
 
-                    retrn = false;
-                }
+                hint[state, index].transform.position = temp;
+                hint[state, index].SetActive(true);
 
                 index++;
             }
         }
 
         _hints.SetActive(true);
-        return retrn;
+        return retorno;
     }
 
     public void undo()
     {
         _hints.SetActive(false);
-        for (int i = 0; i < ocupado.Length; i++)
+        for (int i = 0; i < prefs.Length; i++)
         {
-            ocupado[i].SetActive(false);
-            livre[i].SetActive(false);
+            for (int j = 0; j < hint.GetLength(1); j++)
+                hint[i, j].SetActive(false);
         }
     }
 
@@ -253,17 +287,32 @@ public class Board : MonoBehaviour
     {
         int slots = 9;
         Debug.LogWarning("positions tem " +slots+ " slots");
-        ocupado = new GameObject[slots];
-        livre = new GameObject[slots];
+        /*grn = new GameObject[slots];
+        wht = new GameObject[slots];
+        red = new GameObject[slots];*/
+
 
         _hints = new GameObject("hints");
-        for (int i = 0; i < slots; i++)
+        hint = new GameObject[3, slots];
+        /*for (int i = 0; i < slots; i++)
         {
-            livre[i] = Instantiate(prefs[0], _hints.transform);
-            livre[i].SetActive(false);
-            ocupado[i] = Instantiate(prefs[1], _hints.transform);
-            ocupado[i].SetActive(false);
+            wht[i] = Instantiate(prefs[0], _hints.transform);
+            wht[i].SetActive(false);
+            grn[i] = Instantiate(prefs[1], _hints.transform);
+            grn[i].SetActive(false);
+            red[i] = Instantiate(prefs[2], _hints.transform);
+            red[i].SetActive(false);
             _hints.SetActive(false);
+        }*/
+
+        for (int i = 0; i < prefs.Length; i++)
+        {
+            for (int j = 0; j < slots; j++)
+            {
+                hint[i,j] = Instantiate(prefs[i], _hints.transform);
+                hint[i, j].SetActive(false);
+            }
         }
+        _hints.SetActive(false);
     }
 }

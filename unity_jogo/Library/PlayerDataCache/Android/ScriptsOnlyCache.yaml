@@ -6,12 +6,12 @@ ScriptsOnlyBuild:
     - FixedJoystick
     - HUD
     - Inventory
-    - Item
     - Moviment_2
     - Sound_player
     - Tempo
     - Tile
     - Tree
+    - item
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
@@ -36,7 +36,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
     - UnityEditor.Graphs.AnimationStateMachine.StateNode
-    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -115,21 +114,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3082}
     - Class: 114
-      Script: {instanceID: 3412}
+      Script: {instanceID: 3354}
     - Class: 114
-      Script: {instanceID: 3632}
+      Script: {instanceID: 3414}
     - Class: 114
-      Script: {instanceID: 3722}
+      Script: {instanceID: 3634}
     - Class: 114
-      Script: {instanceID: 4082}
+      Script: {instanceID: 3724}
     - Class: 114
-      Script: {instanceID: 4124}
+      Script: {instanceID: 4084}
     - Class: 114
-      Script: {instanceID: 4182}
+      Script: {instanceID: 4126}
     - Class: 114
-      Script: {instanceID: 4200}
+      Script: {instanceID: 4184}
     - Class: 114
-      Script: {instanceID: 70142}
+      Script: {instanceID: 4202}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -249,7 +248,7 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
-      Hash: 52b5affcf34bd883a1c7fbea26b79628
+      Hash: 8e3b8db1f384a16aa7fc1126c8131141
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Tempo
@@ -315,7 +314,7 @@ ScriptsOnlyBuild:
     className: IKManager2D
   - hash:
       serializedVersion: 2
-      Hash: 26d652cbdbb0fed1dc47bd22a5570a20
+      Hash: 8f74591617b8e8affeb1e9467164ff26
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Moviment_2
@@ -327,7 +326,7 @@ ScriptsOnlyBuild:
     className: EnumerableTestState
   - hash:
       serializedVersion: 2
-      Hash: 80cd2a1ff89a2b02f499721f511bda19
+      Hash: ad88b50541c63a66150a8f6c1a8e0ee9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Inventory
@@ -495,6 +494,12 @@ ScriptsOnlyBuild:
     className: Outline
   - hash:
       serializedVersion: 2
+      Hash: efdb2ed81c52419941c65f2ff03b7294
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Sound_player
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -504,7 +509,7 @@ ScriptsOnlyBuild:
       Hash: c0de75147969b9e4b89ff6b954a9480e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Item
+    className: item
   - hash:
       serializedVersion: 2
       Hash: 3164bc883ff663a5cdb32d1ef7e7c0c5
@@ -561,7 +566,7 @@ ScriptsOnlyBuild:
     className: PositionAsUV1
   - hash:
       serializedVersion: 2
-      Hash: 5ea30ef071323301d51285742c9c2d30
+      Hash: 97e5fed4a7e1b085cf4565011a6d992b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: HUD
@@ -769,12 +774,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
-  - hash:
-      serializedVersion: 2
-      Hash: efdb2ed81c52419941c65f2ff03b7294
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Sound_player
   platform: 13
   scenePathNames:
   - Assets/Scenes/teste_2.unity

@@ -19,12 +19,20 @@ public class HUD : MonoBehaviour
     Image[][] images;
 
     [SerializeField]
-    Text[] texts0, texts1;
+    Slider[] sliders;
+
+    Vector3 _status_pos;
+    bool _status_visibility;
     [SerializeField]
-    Image[] images0, images1;
+    RectTransform[] _status;
 
     int open_in = -1;
-    bool inventory_opened = false;
+
+
+
+
+
+
 
     [SerializeField]
     DeviceOrientation orientacao, estilo = DeviceOrientation.Portrait;
@@ -39,9 +47,6 @@ public class HUD : MonoBehaviour
 
     void Awake()
     {
-        estilo = DeviceOrientation.Portrait;
-        orientation = 0;
-
         hud = this;
         get_components();
     }
@@ -49,14 +54,17 @@ public class HUD : MonoBehaviour
     void Start()
     {
         change_hand(null);
-        Moviment_2.player.equipar(null);
     }
 
     private void FixedUpdate()
     {
         check_orientation();
     }
-
+    
+    [SerializeField]
+    Image[] imgs1, imgs2;
+    [SerializeField]
+    Text [] txts1, txts2;
     void get_components()
     {
         texts = new Text[2][];
@@ -68,6 +76,7 @@ public class HUD : MonoBehaviour
         images[1] = new Image[15];
 
         _status = new RectTransform[2];
+        sliders = new Slider[2];
 
         for (int i = 0; i < 2; i++)
         {
@@ -86,25 +95,41 @@ public class HUD : MonoBehaviour
              texts[i][txt++] = huds[i].GetChild(1).GetChild(0).GetChild(1).GetChild(1).GetChild(0).GetComponent<Text>();
              texts[i][txt++] = huds[i].GetChild(1).GetChild(0).GetChild(1).GetChild(1).GetChild(1).GetComponent<Text>();
 
+            images[i][img++] = huds[i].GetChild(0).GetChild(4).GetChild(1).GetChild(0).GetComponent<Image>();
+            images[i][img++] = huds[i].GetChild(0).GetChild(4).GetChild(1).GetChild(1).GetComponent<Image>();
+             texts[i][txt++] = huds[i].GetChild(0).GetChild(4).GetChild(1).GetChild(2).GetComponent<Text>();
+
             _status[i] = huds[i].GetChild(0).GetChild(3).GetComponent<RectTransform>();
+            sliders[i] = huds[i].GetChild(0).GetChild(3).GetChild(2).GetComponent<Slider>();
         }
 
-        images0 = images[0];
-        images1 = images[1];
-        texts0 = texts[0];
-        texts1 = texts[1];
+        imgs1 = images[0];
+        imgs2 = images[1];
+
+        txts1 = texts[0];
+        txts2 = texts[1];
+
 
         descrpt = huds[orientation].GetChild(1).GetChild(0).GetChild(1).GetComponent<RectTransform>();
+
         Transform aux0 = huds[0].GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(0);
         Transform aux1 = huds[1].GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(0);
         int size = aux0.childCount;
+
+        cards1 = new RectTransform[size];
+        cards2 = new RectTransform[size];
 
         card = new RectTransform[2, size];
         for (int i = 0; i < size; i++)
         {
             card[0, i] = aux0.GetChild(i).GetComponent<RectTransform>();
             card[1, i] = aux1.GetChild(i).GetComponent<RectTransform>();
+
+            cards1[i] = card[0, i];
+            cards2[i] = card[1, i];
         }
+
+
 
         open_in = -1;
 
@@ -112,6 +137,11 @@ public class HUD : MonoBehaviour
         _fill_cards(0);
         _close();
     }
+
+    [SerializeField]
+    RectTransform[] cards1;
+    [SerializeField]
+    RectTransform[] cards2;
 
     public void check_orientation()
     {
@@ -204,8 +234,7 @@ public class HUD : MonoBehaviour
         huds[0].GetChild(1).gameObject.SetActive(true);
         huds[1].GetChild(1).gameObject.SetActive(true);
 
-        inventory_opened = true;
-        Debug.LogWarning("Para tempo");
+        Tempo.tempo.Running(false);
     }
     public void _close()
     {
@@ -214,12 +243,12 @@ public class HUD : MonoBehaviour
         huds[1].GetChild(0).gameObject.SetActive(true);
         huds[1].GetChild(1).gameObject.SetActive(false);
 
-        inventory_opened = false;
+        Tempo.tempo.Running(true);
     }
 
     public void _pressed(int index)
     {
-        Item aux;
+        item aux;
         switch (open_in)
         {
             case 0:     aux = Inventory.inventory.itens_0[index]; break;   //FERRAMENTAS
@@ -230,7 +259,13 @@ public class HUD : MonoBehaviour
         }
 
         change_hand(aux);
-        Moviment_2.player.equipar(aux);
+    }
+
+    public void _pause(bool open) {
+        huds[orientation].gameObject.SetActive(!open);
+        Tempo.tempo.Running(!open);
+
+        huds[2].gameObject.SetActive(open);
     }
 
 
@@ -238,11 +273,6 @@ public class HUD : MonoBehaviour
 
 
 
-
-    Vector3 _status_pos;
-    bool _status_visibility;
-    [SerializeField]
-    RectTransform [] _status;
 
 
     public void status_visibility(bool param)
@@ -273,17 +303,19 @@ public class HUD : MonoBehaviour
             return;
         }
 
-        float aux1 = tile.curnt_age, aux2 = aux.age * aux.stages.Length;
+        float aux1 = tile.curnt_age, aux2 = aux.age * (aux.stages.Length-1);
 
-        //name.text = aux.name;
         texts[0][0].text = aux.name;
-        //slide.value = (aux1 / aux2);
-        //img.sprite = aux.icon;
+        texts[1][0].text = aux.name;
+
+        sliders[0].value = (aux1 / aux2);
+        sliders[1].value = (aux1 / aux2);
+
         images[0][0].sprite = aux.icon;
+        images[1][0].sprite = aux.icon;
 
         status_visibility(visible);
     }
-
 
     public void Refresh()
     {
@@ -307,14 +339,17 @@ public class HUD : MonoBehaviour
             return;
         }
 
-        float aux1 = tile.curnt_age, aux2 = aux.age * aux.stages.Length;
+        float aux1 = tile.curnt_age, aux2 = aux.age * (aux.stages.Length-1);
 
 
-        //name.text = aux.name;
         texts[0][0].text = aux.name;
-        //slide.value = (aux1 / aux2);
-        //img.sprite = aux.icon;
+        texts[1][0].text = aux.name;
+
+        sliders[0].value = (aux1 / aux2);
+        sliders[1].value = (aux1 / aux2);
+
         images[0][0].sprite = aux.icon;
+        images[1][0].sprite = aux.icon;
 
         status_visibility(true);
     }
@@ -330,54 +365,68 @@ public class HUD : MonoBehaviour
 
 
 
-
-    bool equipado;
-    public void change_hand(Item item)
+    public void change_hand(item item)
     {
+
         if (item == null)
         {
-            equipado = false;
-
             for (int i = 0; i < 2; i++)
             {
                 images[i][1].enabled = false;
                 images[i][2].enabled = false;
                 images[i][3].enabled = false;
+                images[i][4].enabled = false;
+                images[i][5].enabled = false;
+
                  texts[i][1].enabled = false;
                  texts[i][2].enabled = false;
                  texts[i][3].enabled = false;
-                Inventory.inventory.equipe(-1);
+                 texts[i][4].enabled = false;
             }
 
             return;
-        }
-
-        if(!equipado)
-        {
-            equipado = true;
-            for (int i = 0; i < 2; i++)
-            {
-                images[i][1].enabled = true;
-                images[i][2].enabled = true;
-                images[i][3].enabled = true;
-                 texts[i][1].enabled = true;
-                 texts[i][2].enabled = true;
-                 texts[i][3].enabled = true;
-            }
-
         }
 
         for (int i = 0; i < 2; i++)
         {
              texts[i][2].text = item.name;
              texts[i][3].text = item.description;
-            images[i][2].sprite = item.icon;
             images[i][3].sprite = item.icon;
 
-            if(item.tipo == Inventory.tipo.FERRAMENTA)
-                Inventory.inventory.equipe(item.id);
-            else
-                Inventory.inventory.equipe(-1);
+             texts[i][2].enabled = true;
+             texts[i][3].enabled = true;
+            images[i][3].enabled = true;
+
+
+            Item aux;
+            if (item.tipo == Inventory.tipo.FERRAMENTA) {
+                switch (item.id)
+                {
+                    case 0:
+                        aux = new Enxada();
+                        break;
+                    case 1:
+                        aux = new Regador();
+                        break;
+                    default:
+                        aux = new Tesoura();
+                        break;
+                }
+                
+                Inventory.inventory.change_tool(aux, item.id);
+                images[i][2].sprite = item.icon;
+                images[i][1].enabled = true;
+                images[i][2].enabled = true;
+            }
+            else {
+                Inventory.inventory.change_seed(item.seed);
+                images[i][5].sprite = item.icon;
+                images[i][4].enabled = true;
+                images[i][5].enabled = true;
+                 texts[i][4].text = item.qntd.ToString();
+                 texts[i][4].enabled = true;
+            }
+                
         }
 
 
@@ -385,10 +434,10 @@ public class HUD : MonoBehaviour
 
     public void _fill_cards(int tab)
     {
-        if (tab == open_in)
-            return;
+        //if (tab == open_in)
+        //    return;
 
-        Item[] aux;
+        item[] aux;
         open_in = tab;
 
         switch (tab)
@@ -400,21 +449,27 @@ public class HUD : MonoBehaviour
             default:    aux = Inventory.inventory.itens_4; break;   //LOJA
         }
 
-        int i = 0;
-        while (i < aux.Length)
+        int i;
+        for (int j = 0; j < 2; j++)
         {
-            card[orientation, i].GetChild(0).GetChild(0).GetComponent<Image>().sprite = aux[i].icon; // icon
-            card[orientation, i].GetChild(1).GetComponent<Text>().text = aux[i].name;                // title
-            card[orientation, i].GetChild(2).GetComponent<Text>().text = aux[i].description;         // description
+            i = 0;
 
-            card[orientation, i].gameObject.SetActive(true);
-            i++;
-        }
+            while (i < aux.Length)
+            {
+                card[j, i].GetChild(0).GetChild(0).GetComponent<Image>().sprite = aux[i].icon; // icon
+                card[j, i].GetChild(1).GetComponent<Text>().text = aux[i].name;                // title
+                card[j, i].GetChild(2).GetComponent<Text>().text = aux[i].description;         // description
 
-        while (i < card.GetLength(1))
-        {
-            card[orientation, i].gameObject.SetActive(false);
-            i++;
+                card[j, i].gameObject.SetActive(true);
+                i++;
+            }
+
+            while (i < card.GetLength(1))
+            {
+                print("nulos");
+                card[j, i].gameObject.SetActive(false);
+                i++;
+            }
         }
     }
 }

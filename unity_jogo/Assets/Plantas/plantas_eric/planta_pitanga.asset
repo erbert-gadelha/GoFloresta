@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Pitanga
   icon: {fileID: 21300000, guid: 39a008f4fbc32fc43a464789efacd6cb, type: 3}
-  age: 1
+  age: 3
   size: {x: 2, y: 2}
   stages:
   - {fileID: 919132149155446097, guid: aa5de451d21bea34196f8482045f0802, type: 3}

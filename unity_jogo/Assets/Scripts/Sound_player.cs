@@ -2,6 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*          SOUND INDEXES
+ *  0 - roe
+ *  1 - dirt
+ *  2 - correct
+ *  3 - water
+ *  4 - scisor
+ *  5 - 
+ */
+
 public class Sound_player : MonoBehaviour
 {
     public static Sound_player player;
@@ -9,7 +18,6 @@ public class Sound_player : MonoBehaviour
     [SerializeField]
     AudioClip[] audios;
 
-    // Start is called before the first frame update
     void Awake()
     {
         player = this;
