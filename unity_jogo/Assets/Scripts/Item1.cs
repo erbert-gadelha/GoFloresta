@@ -101,7 +101,7 @@ class Tesoura : Item
         if (tile.madura == 0)
             return false;
 
-        if (tile.tree.poldada == null)
+        if (tile.tree.poldada_ == null)
             return false;
 
         if (tile.Podar())

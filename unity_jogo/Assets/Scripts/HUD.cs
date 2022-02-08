@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HUD : MonoBehaviour
 {
@@ -10,8 +11,6 @@ public class HUD : MonoBehaviour
     [SerializeField]
     RectTransform[] huds;
     RectTransform[,] card;
-    RectTransform descrpt;
-
 
     [SerializeField]
     Text[][] texts;
@@ -49,6 +48,7 @@ public class HUD : MonoBehaviour
     {
         hud = this;
         get_components();
+        orientation = -1;
     }
 
     void Start()
@@ -58,7 +58,11 @@ public class HUD : MonoBehaviour
 
     private void FixedUpdate()
     {
-        check_orientation();
+        int w, h;
+        w = Screen.width;
+        h = Screen.height;
+
+        change_orientation((h>w)?0:1);
     }
     
     [SerializeField]
@@ -108,9 +112,6 @@ public class HUD : MonoBehaviour
 
         txts1 = texts[0];
         txts2 = texts[1];
-
-
-        descrpt = huds[orientation].GetChild(1).GetChild(0).GetChild(1).GetComponent<RectTransform>();
 
         Transform aux0 = huds[0].GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(0);
         Transform aux1 = huds[1].GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(0);
@@ -234,6 +235,7 @@ public class HUD : MonoBehaviour
         huds[0].GetChild(1).gameObject.SetActive(true);
         huds[1].GetChild(1).gameObject.SetActive(true);
 
+        _fill_cards(open_in);
         Tempo.tempo.Running(false);
     }
     public void _close()
@@ -268,7 +270,10 @@ public class HUD : MonoBehaviour
         huds[2].gameObject.SetActive(open);
     }
 
-
+    public void _load_scene(int scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
 
 
 
@@ -278,6 +283,7 @@ public class HUD : MonoBehaviour
     public void status_visibility(bool param)
     {
         _status_visibility = param;
+
         _status[0].gameObject.SetActive(param);
         _status[1].gameObject.SetActive(param);
     }
@@ -345,13 +351,14 @@ public class HUD : MonoBehaviour
         texts[0][0].text = aux.name;
         texts[1][0].text = aux.name;
 
-        sliders[0].value = (aux1 / aux2);
-        sliders[1].value = (aux1 / aux2);
+
+        status_visibility(true);
+        sliders[0].value = Mathf.Clamp((aux1 / aux2), 0, 1);
+        sliders[1].value = Mathf.Clamp((aux1 / aux2), 0, 1);
 
         images[0][0].sprite = aux.icon;
         images[1][0].sprite = aux.icon;
 
-        status_visibility(true);
     }
 
 
@@ -434,8 +441,11 @@ public class HUD : MonoBehaviour
 
     public void _fill_cards(int tab)
     {
-        //if (tab == open_in)
-        //    return;
+
+        huds[0].transform.GetChild(1).GetChild(0).GetChild(0).GetChild(1).gameObject.GetComponent<ScrollRect>().verticalNormalizedPosition = 1;
+        huds[1].transform.GetChild(1).GetChild(0).GetChild(0).GetChild(1).gameObject.GetComponent<ScrollRect>().verticalNormalizedPosition = 1;
+        if (tab == open_in)
+            return;
 
         item[] aux;
         open_in = tab;
@@ -464,12 +474,26 @@ public class HUD : MonoBehaviour
                 i++;
             }
 
+
+            RectTransform _aux;
+
+             _aux = huds[0].transform.GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(0).gameObject.GetComponent<RectTransform>();
+            _aux.sizeDelta = new Vector2(_aux.sizeDelta.x, 191 * (i + 0.5f));
+
+            _aux = huds[1].transform.GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(0).gameObject.GetComponent<RectTransform>();
+            _aux.sizeDelta = new Vector2(_aux.sizeDelta.x, 271 * (i + 0.5f));
+
+
+
             while (i < card.GetLength(1))
             {
-                print("nulos");
                 card[j, i].gameObject.SetActive(false);
                 i++;
             }
         }
+
+        huds[0].transform.GetChild(1).GetChild(0).GetChild(0).GetChild(1).gameObject.GetComponent<ScrollRect>().verticalNormalizedPosition = 1;
+        huds[1].transform.GetChild(1).GetChild(0).GetChild(0).GetChild(1).gameObject.GetComponent<ScrollRect>().verticalNormalizedPosition = 1;
+
     }
 }

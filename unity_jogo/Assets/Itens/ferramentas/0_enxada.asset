@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33dd6953449da994aa6ad8786027e4a4, type: 3}
   m_Name: 0_enxada
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: efd86360ffe0df541b2d9bcf43dc8c3d, type: 3}
+  icon: {fileID: -8298894206223745466, guid: e2862eb943cccd541b6c02d63ece6015, type: 3}
   name: Enxada
-  description: Are o chao para que possa plantar suas sementes.
+  description: Are o chao para que possa plantar suas sementes
   id: 0
   qntd: 0
   value: 0

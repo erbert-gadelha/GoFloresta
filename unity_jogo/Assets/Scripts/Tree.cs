@@ -12,7 +12,10 @@ public class Tree : ScriptableObject
 
     [Header("Stages")]
     public GameObject[] stages = { null };
-    public GameObject poldada;
+    public GameObject carregada_;
+    public GameObject carregada_poldada;
+    public GameObject poldada_;
+    public GameObject poldada_carregada;
     public bool[] colisions = { false };
 
     public float ph_ideal;

@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33dd6953449da994aa6ad8786027e4a4, type: 3}
   m_Name: 1_regador
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 2de4d6cca6aa1834ebf607325fe2a3e3, type: 3}
+  icon: {fileID: 4107905308803690656, guid: e2862eb943cccd541b6c02d63ece6015, type: 3}
   name: Regador
-  description: "Se seu sonho \xE9 ter um jardim lindo e saud\xE1vel em casa e n\xE3o
-    sabe por onde come\xE7ar, n\xF3s ajudamos!"
+  description: "REgue pkantas para permitir que ela cre\xE7am"
   id: 1
   qntd: 0
   value: 0

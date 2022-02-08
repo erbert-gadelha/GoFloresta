@@ -22,7 +22,7 @@ public class Board : MonoBehaviour
     Vector3Int offset;
 
     [SerializeField]
-    Mesh[] material;
+    Material[] material;
 
 
 
@@ -153,11 +153,13 @@ public class Board : MonoBehaviour
         {
             case materials.arado:
                 aux.arado = true;
-                aux.mesh.mesh = this.material[0];
+                aux.mesh.sharedMaterial = this.material[0];
+                //aux.mesh.mesh = this.material[0];
                 break;
             case materials.grama:
                 aux.arado = false;
-                aux.mesh.mesh = this.material[random];
+                aux.mesh.sharedMaterial = this.material[random];
+                //aux.mesh.mesh = this.material[random];
 
                 random++;
                 if (random >= this.material.Length)
@@ -166,11 +168,13 @@ public class Board : MonoBehaviour
                 break;
             case materials.molhado:
                 aux.arado = true;
-                aux.mesh.mesh = this.material[0];
+                aux.mesh.sharedMaterial = this.material[0];
+                //aux.mesh.mesh = this.material[0];
                 break;
             case materials.ocupado:
                 aux.arado = true;
-                aux.mesh.mesh = this.material[0];
+                aux.mesh.sharedMaterial = this.material[0];
+                //aux.mesh.mesh = this.material[0];
                 break;
         }
     }

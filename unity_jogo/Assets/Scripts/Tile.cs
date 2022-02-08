@@ -16,7 +16,7 @@ public class Tile : MonoBehaviour
     public bool molhado;
 
     [HideInInspector]
-    public MeshFilter mesh;
+    public MeshRenderer mesh;
 
     public int currt_state;
     public Vector2Int position;
@@ -36,7 +36,7 @@ public class Tile : MonoBehaviour
 
     private void Awake()
     {
-        mesh = transform.GetChild(0).gameObject.GetComponent<MeshFilter>();
+        mesh = transform.GetChild(0).gameObject.GetComponent<MeshRenderer>();
     }
 
     void Start()
@@ -46,8 +46,8 @@ public class Tile : MonoBehaviour
         position = new Vector2Int((int)Mathf.Abs(transform.localPosition.x), (int)Mathf.Abs(transform.localPosition.z));
         Board.board.add(this, position.x, position.y);
 
-        Debug.LogWarning("Temporario");
-        Board.board.change_mat(position, Board.materials.grama);
+        //Debug.LogWarning("Temporario");
+        //Board.board.change_mat(position, Board.materials.grama);
     }
 
     public void Arar()
@@ -70,12 +70,12 @@ public class Tile : MonoBehaviour
 
     public bool Podar()
     {
-        if (tree.poldada == null)
+        if (tree.poldada_ == null)
             return false;
 
 
         Destroy(obj);
-        obj = Instantiate(tree.poldada);
+        obj = Instantiate(tree.poldada_);
 
         currt_state--;
         curnt_age--;

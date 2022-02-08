@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33dd6953449da994aa6ad8786027e4a4, type: 3}
   m_Name: 2_tesoura
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: fceb758d284a7e14e8151dbbc5db060a, type: 3}
+  icon: {fileID: -361323539684066396, guid: e2862eb943cccd541b6c02d63ece6015, type: 3}
   name: Tesoura
   description: Use para poudar as plantas e adiquirir compostos.
   id: 2
