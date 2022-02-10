@@ -25,6 +25,7 @@ public class Tempo : MonoBehaviour
     }
 
     void Start() {
+        //Debug.LogWarning("No CastingShadow");
         SetTo(hora);
 
         tempo = this;
@@ -37,12 +38,17 @@ public class Tempo : MonoBehaviour
     {   plantas.Add(planta);    }
     public void Remove(Tile planta)
     {   plantas.Remove(planta); }
+    
+    
+
     public void Skip()
     {
         for (int i = 0; i < plantas.Count; i++)
             plantas[i].grow();
 
         HUD.hud.Refresh();
+
+        Board.board.castShadows(obj.transform.forward * (-1));
     }
 
     public void SetTo(int to)

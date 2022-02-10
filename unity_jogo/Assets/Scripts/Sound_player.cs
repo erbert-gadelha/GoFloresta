@@ -8,7 +8,8 @@ using UnityEngine;
  *  2 - correct
  *  3 - water
  *  4 - scisor
- *  5 - 
+ *  5 - machado
+ *  6 - colher
  */
 
 public class Sound_player : MonoBehaviour

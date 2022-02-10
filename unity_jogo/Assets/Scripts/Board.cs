@@ -23,17 +23,14 @@ public class Board : MonoBehaviour
 
     [SerializeField]
     Material[] material;
-
-
-
-    GameObject[] red;
-    GameObject[] grn;
-    GameObject[] wht;
+    [SerializeField]
+    Material[] material_sombra;
 
     GameObject _hints;
     GameObject [,] hint;
 
 
+    public GameObject broto;
 
 
 
@@ -87,97 +84,135 @@ public class Board : MonoBehaviour
         if (!aux.arado | aux.obj != null)
             return false;
 
-        aux.childs = new Tile[(tree.size.x * tree.size.y)];
-        int i = 0;
-
-        float _x = 0, _y = 0;
-        for (int X = 0; X < tree.size.x; X++)
-        {
-            for (int Y = 0; Y < tree.size.y; Y++)
+        int size = tree.size.x * tree.size.y;
+        if (size > 1) {
+            aux.childs = new Tile[4];
+            switch (rotation)
             {
-                switch (rotation)
-                {
-                    case 0: //BAIXO
-                        aux.childs[i] = board.get(aux.position.x - X, aux.position.y - Y);
-                        break;
-                    case 1: // ESQUERDA
-                        aux.childs[i] = board.get(aux.position.x - Y, aux.position.y - X);
-                        break;
-                    case 2: // CIMA
-                        aux.childs[i] = board.get(aux.position.x + X, aux.position.y + Y);
-                        break;
-                    case 3: // DIREITA
-                        aux.childs[i] = board.get(aux.position.x + Y, aux.position.y + X);
-                        break;
-                }
+                case 0: //BAIXO         aux.x - X, aux.y - Y
+                    pos += new Vector3(-0.5f, 0, -0.5f);
+                    break;
+                case 1: // ESQUERDA     aux.x - Y, aux.y - X
+                    pos += new Vector3(-0.5f, 0, -0.5f);
+                    break;
+                case 2: // CIMA         aux.x + X, aux.y + Y
+                    pos += new Vector3(0.5f, 0, 0.5f);
+                    break;
+                case 3: // DIREITA      aux.x + Y, aux.y + X
+                    pos += new Vector3(0.5f, 0, 0.5f);
+                    break;
+            }
 
+            aux.childs[0] = get((int)(pos.x + 0.5f), (int)(pos.z + 0.5f));
+            aux.childs[1] = get((int)(pos.x - 0.5f), (int)(pos.z + 0.5f));
+            aux.childs[2] = get((int)(pos.x - 0.5f), (int)(pos.z - 0.5f));
+            aux.childs[3] = get((int)(pos.x + 0.5f), (int)(pos.z - 0.5f));
+
+            for (int i = 0; i < aux.childs.Length; i++)
                 if (aux.childs[i] == null)
                 {
-                    print("nulo aqui");
+                    aux.childs = null;
                     return false;
                 }
 
-                _x += aux.childs[i].position.x;
-                _y += aux.childs[i].position.y;
-
-                change_mat(aux.childs[i].position, materials.ocupado);
-                aux.childs[i].parent = aux;
-
-                i++;
-            }
+        } else {
+            aux.childs = new Tile[0];
         }
 
+
+        for (int i = 0; i < aux.childs.Length; i++)
+        {
+            if (aux.childs[i] == null)
+                continue;
+
+            change_mat(aux.childs[i].position, tree.level, aux.childs[i].na_sombra);
+            aux.childs[i].parent = aux;
+        }
+
+        change_mat(aux.position, tree.level, aux.na_sombra);
         aux.parent = null;
-        aux.center = new Vector3( _x/(tree.size.x * tree.size.y), 0, _y/(tree.size.x * tree.size.y));
-        change_mat(aux.position, materials.arado);
+        aux.center = pos;
 
         aux.tree = tree;
-        aux.curnt_age = -1;
-        aux.currt_state = 1;
+        aux.current_age = -1;
+        aux.target_age = tree.tempo_crescer;
+        aux.current_state = 0;
         aux.rotation = rotation;
 
-        aux.madura = 0;
+        aux.colheitas = 0;
         Tempo.tempo.Add(aux);
         aux.Refresh();
 
         return true;
     }
 
+    public bool destroy(Vector2Int pos)
+    {
+        Tile tile = get(pos.x, pos.y);
 
-    int random = 1;
-    public void change_mat(Vector2Int pos, materials material)
+        if (tile.obj == null)
+            return false;
+
+        Tempo.tempo.Remove(tile);
+        Destroy(tile.obj);
+
+        if(tile.childs != null)
+        for (int i = 0; i < tile.childs.Length; i++)
+        {
+            tile.childs[i].current_state = 0;
+            tile.childs[i].colision = false;
+            tile.childs[i].plantable = true;
+            tile.childs[i].parent = null;
+            tile.childs[i].obj = null;
+            tile.childs[i].arado = false;
+
+            tile.childs[i].crescendo = 0;
+
+            tile.childs[i].arado = false;
+            tile.tree = null;
+            tile.childs = null;
+            tile.childs[i].current_age = 0;
+        }
+        tile.crescendo = 0;
+
+        tile.current_state = 0;
+        tile.current_age = 0;
+        tile.colision = false;
+        tile.arado = false;
+        tile.plantable = true;
+        tile.parent = null;
+        tile.obj = null;
+
+        tile.tree = null;
+        tile.childs = null;
+
+        return true;
+    }
+
+    public void colher(Vector3 position)
+    {
+        Tile tile = get(position);
+        if (tile == null)
+            return;
+
+        if (tile.parent != null)
+            tile = tile.parent;
+
+
+        tile.current_state = 3;
+        tile.Refresh();
+    }
+
+    public void change_mat(Vector2Int pos, int index, bool sombra)
     {
         Tile aux = get(pos.x, pos.y);
 
-        switch (material)
-        {
-            case materials.arado:
-                aux.arado = true;
-                aux.mesh.sharedMaterial = this.material[0];
-                //aux.mesh.mesh = this.material[0];
-                break;
-            case materials.grama:
-                aux.arado = false;
-                aux.mesh.sharedMaterial = this.material[random];
-                //aux.mesh.mesh = this.material[random];
-
-                random++;
-                if (random >= this.material.Length)
-                    random = 1;
-                
-                break;
-            case materials.molhado:
-                aux.arado = true;
-                aux.mesh.sharedMaterial = this.material[0];
-                //aux.mesh.mesh = this.material[0];
-                break;
-            case materials.ocupado:
-                aux.arado = true;
-                aux.mesh.sharedMaterial = this.material[0];
-                //aux.mesh.mesh = this.material[0];
-                break;
-        }
+        if (!sombra)
+            aux.mesh.sharedMaterial = material[index];
+        else
+            aux.mesh.sharedMaterial = material_sombra[index];
     }
+
 
     public bool select(Vector3 pos, Item item, int rot)
     {
@@ -195,6 +230,7 @@ public class Board : MonoBehaviour
         bool retorno = true;
         int index = 0, state = 0;
         Tile aux;
+
 
         /*  
          *  STATE
@@ -231,20 +267,10 @@ public class Board : MonoBehaviour
                     state = 2;
                     retorno = false;
                 } else {
-                    switch (item.selec)
+                    switch ((int) item.selec)//{ARAR, CORTAR, PLANTAR, PODAR, REGAR};
                     {
-                        case Item.selecao.ARADO:
-                            if (aux.obj != null | aux.parent != null) {
-                                state = 2;
-                                retorno = false;
-                            } else if (aux.arado) {
-                                state = 1;
-                            } else {
-                                retorno = false;
-                                state = 0;
-                            }
-                            break;
-                        case Item.selecao.VAZIO:
+                        // ARAR
+                        case 0:    // [-n.ARADO -VAZIO]
                             if (aux.obj != null | aux.parent != null) {
                                 state = 2;
                                 retorno = false;
@@ -255,7 +281,54 @@ public class Board : MonoBehaviour
                                 state = 1;
                             }
                             break;
-                        case Item.selecao.PLANTADO:
+
+                        // CORTAR
+                        case 1:    // [-PLANTADO]
+                            if (aux.obj != null | aux.parent != null) {
+                                state = 1;
+                            } else {
+                                state = 2;
+                                retorno = false;
+                            }
+                            break;
+
+                        // PLANTAR
+                        case 2:    // [-ARADO -VAZIO]
+                            if (aux.obj != null | aux.parent != null) {//PLANTADO
+                                state = 2;
+                                retorno = false;
+                            } else if (aux.arado) {//ARADO
+                                if (aux.current_level < item.id)    //NIVEL ERRADO
+                                {
+                                    retorno = false;
+                                    state = 0;
+                                }
+                                else                //NIVEL CERTO
+                                    state = 1;
+                            } else {//NAO ARADO
+                                retorno = false;
+                                state = 2;
+                            }
+                            break;
+
+                        // PODAR
+                        case 3:    // [-PLANTADO]
+                            if (aux.obj != null | aux.parent != null)
+                            {
+                                if (aux.crescendo == 3)
+                                    state = 1;
+                                else {
+                                    state = 2;
+                                    retorno = false;
+                                }
+                            } else {
+                                state = 2;
+                                retorno = false;
+                            }
+                            break;
+
+                        // REGAR
+                        case 4:    // [-PLANTADO]
                             if (aux.obj != null | aux.parent != null) {
                                 state = 1;
                             } else {
@@ -289,25 +362,10 @@ public class Board : MonoBehaviour
 
     void hints()
     {
-        int slots = 9;
-        Debug.LogWarning("positions tem " +slots+ " slots");
-        /*grn = new GameObject[slots];
-        wht = new GameObject[slots];
-        red = new GameObject[slots];*/
-
+        int slots = 4;
 
         _hints = new GameObject("hints");
         hint = new GameObject[3, slots];
-        /*for (int i = 0; i < slots; i++)
-        {
-            wht[i] = Instantiate(prefs[0], _hints.transform);
-            wht[i].SetActive(false);
-            grn[i] = Instantiate(prefs[1], _hints.transform);
-            grn[i].SetActive(false);
-            red[i] = Instantiate(prefs[2], _hints.transform);
-            red[i].SetActive(false);
-            _hints.SetActive(false);
-        }*/
 
         for (int i = 0; i < prefs.Length; i++)
         {
@@ -319,4 +377,39 @@ public class Board : MonoBehaviour
         }
         _hints.SetActive(false);
     }
+
+
+    public void castShadows(Vector3 direc)
+    {
+
+        /*
+        print(direc);
+        Debug.Log("Ta no cast");
+        */
+        Tile aux;
+        for (int i = 0; i < terrains.GetLength(0); i++)
+            for (int j = 0; j < terrains.GetLength(1); j++)
+            {
+                aux = get(i, j);
+                if (aux == null)
+                    continue;
+
+                bool na_sombra = Physics.Raycast(new Vector3(i, 0, j), direc);
+                if (na_sombra != aux.na_sombra)
+                {
+                    aux.na_sombra = na_sombra;
+                    change_mat(aux.position, aux.current_level, aux.na_sombra);
+
+                    Debug.Log("mandou mudar mat");
+                }
+
+                /*
+                if (na_sombra)
+                    Debug.Log("sombra");
+                else
+                    Debug.Log("sol");*/
+            }
+
+    }
+
 }

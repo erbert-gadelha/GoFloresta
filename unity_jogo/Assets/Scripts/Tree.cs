@@ -8,15 +8,18 @@ public class Tree : ScriptableObject
     public string name;
     public Sprite icon;
     public int age;
+    public int level;
+    public bool gosta_sombra;
     public Vector2Int size;
+    public int tempo_crescer;
+    public int tempo_fruto;
+    public int colheitas;
 
     [Header("Stages")]
-    public GameObject[] stages = { null };
-    public GameObject carregada_;
-    public GameObject carregada_poldada;
-    public GameObject poldada_;
-    public GameObject poldada_carregada;
-    public bool[] colisions = { false };
+    public GameObject _broto;
+    public GameObject _0_jovem;
+    public GameObject _1_adulta;
+    public GameObject _2_colhida;
+    public GameObject _3_poldada;
 
-    public float ph_ideal;
 }

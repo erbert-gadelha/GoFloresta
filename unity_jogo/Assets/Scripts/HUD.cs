@@ -69,6 +69,8 @@ public class HUD : MonoBehaviour
     Image[] imgs1, imgs2;
     [SerializeField]
     Text [] txts1, txts2;
+
+    Button[] colher;
     void get_components()
     {
         texts = new Text[2][];
@@ -81,12 +83,13 @@ public class HUD : MonoBehaviour
 
         _status = new RectTransform[2];
         sliders = new Slider[2];
+        colher = new Button[2];
 
         for (int i = 0; i < 2; i++)
         {
             int txt = 0, img = 0;
             //STATUS
-             texts[i][txt++] = huds[i].GetChild(0).GetChild(3).GetChild(1).GetComponent<Text>();
+            texts[i][txt++] = huds[i].GetChild(0).GetChild(3).GetChild(1).GetComponent<Text>();
             images[i][img++] = huds[i].GetChild(0).GetChild(3).GetChild(0).GetChild(0).GetComponent<Image>();
 
             //EQUIPADO - MAO
@@ -103,6 +106,9 @@ public class HUD : MonoBehaviour
             images[i][img++] = huds[i].GetChild(0).GetChild(4).GetChild(1).GetChild(1).GetComponent<Image>();
              texts[i][txt++] = huds[i].GetChild(0).GetChild(4).GetChild(1).GetChild(2).GetComponent<Text>();
 
+
+
+            colher[i] = huds[i].GetChild(0).GetChild(3).GetChild(0).GetChild(0).GetComponent<Button>();
             _status[i] = huds[i].GetChild(0).GetChild(3).GetComponent<RectTransform>();
             sliders[i] = huds[i].GetChild(0).GetChild(3).GetChild(2).GetComponent<Slider>();
         }
@@ -275,6 +281,10 @@ public class HUD : MonoBehaviour
         SceneManager.LoadScene(scene);
     }
 
+    public void _colher()    {
+        print("chama");
+        Board.board.colher(_status_pos);
+    }
 
 
 
@@ -302,23 +312,34 @@ public class HUD : MonoBehaviour
         if (tile.parent != null)
             tile = tile.parent;
 
-        Tree aux = tile.tree;
-        if (aux == null)
+        Tree tree = tile.tree;
+        if (tree == null)
         {
             status_visibility(false);
             return;
         }
 
-        float aux1 = tile.curnt_age, aux2 = aux.age * (aux.stages.Length-1);
+        float value;
+        if (tile.current_state < 0)
+            value = 1;
+        else {
+            float aux1 = tile.current_age, aux2 = tile.target_age;
+            value = aux1 / aux2;
+        }
 
-        texts[0][0].text = aux.name;
-        texts[1][0].text = aux.name;
+        texts[0][0].text = tree.name;
+        texts[1][0].text = tree.name;
 
-        sliders[0].value = (aux1 / aux2);
-        sliders[1].value = (aux1 / aux2);
 
-        images[0][0].sprite = aux.icon;
-        images[1][0].sprite = aux.icon;
+        status_visibility(true);
+        sliders[0].value = value;
+        sliders[1].value = value;
+
+        colher[0].interactable = tile.com_fruto;
+        colher[1].interactable = tile.com_fruto;
+
+        images[0][0].sprite = tree.icon;
+        images[1][0].sprite = tree.icon;
 
         status_visibility(visible);
     }
@@ -338,26 +359,36 @@ public class HUD : MonoBehaviour
         if (tile.parent != null)
             tile = tile.parent;
 
-        Tree aux = tile.tree;
-        if (aux == null)
+        Tree tree = tile.tree;
+        if (tree == null)
         {
             status_visibility(false);
             return;
         }
 
-        float aux1 = tile.curnt_age, aux2 = aux.age * (aux.stages.Length-1);
+        float value;
+        if (tile.current_state < 0)
+            value = 1;
+        else
+        {
+            float aux1 = tile.current_age, aux2 = tile.target_age;
+            value = aux1 / aux2;
+        }
 
-
-        texts[0][0].text = aux.name;
-        texts[1][0].text = aux.name;
-
+        texts[0][0].text = tree.name;
+        texts[1][0].text = tree.name;
 
         status_visibility(true);
-        sliders[0].value = Mathf.Clamp((aux1 / aux2), 0, 1);
-        sliders[1].value = Mathf.Clamp((aux1 / aux2), 0, 1);
+        sliders[0].value = value;
+        sliders[1].value = value;
 
-        images[0][0].sprite = aux.icon;
-        images[1][0].sprite = aux.icon;
+
+        colher[0].interactable = tile.com_fruto;
+        colher[1].interactable = tile.com_fruto;
+
+
+        images[0][0].sprite = tree.icon;
+        images[1][0].sprite = tree.icon;
 
     }
 
@@ -415,8 +446,11 @@ public class HUD : MonoBehaviour
                     case 1:
                         aux = new Regador();
                         break;
-                    default:
+                    case 2:
                         aux = new Tesoura();
+                        break;
+                    default:
+                        aux = new Machado();
                         break;
                 }
                 

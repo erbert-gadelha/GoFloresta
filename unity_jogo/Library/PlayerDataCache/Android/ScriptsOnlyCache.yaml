@@ -28,6 +28,9 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
+    Unity.CollabProxy.Editor.dll:
+    - Unity.Cloud.Collaborate.UserInterface.CollaborateWindow
+    - Unity.Cloud.Collaborate.UserInterface.WindowCache
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.TestRunner.dll:
@@ -128,7 +131,7 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
-    - Class: 64
+    - Class: 65
       Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
@@ -189,6 +192,8 @@ ScriptsOnlyBuild:
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 135
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -439,7 +444,7 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
-      Hash: 0a85f8e271223a97b1669e1fb2ffca0e
+      Hash: 31f9b15b7b616e2d8f6bd221ce882af2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Board
@@ -637,7 +642,7 @@ ScriptsOnlyBuild:
     className: AudioPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: b40af5a95b75f79b35c83cdf88c92327
+      Hash: 9ee41e7466186ac8bcbdb8ab10c31532
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Tile
@@ -715,7 +720,7 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
-      Hash: fe0f5ab891cc656e1b8f06b95f981a7a
+      Hash: 1a05a383cbf25aa855ea9ad86056a326
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Tree

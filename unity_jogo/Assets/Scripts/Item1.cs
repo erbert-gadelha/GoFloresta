@@ -4,13 +4,12 @@ using UnityEngine;
 
 public abstract class Item
 {
-    item item;
-
+    public int id;
     public int sound;
     public Vector2Int size;
     public abstract bool usar(Vector3 pos, int rot);
 
-    public enum selecao {ARADO, VAZIO, PLANTADO};
+    public enum selecao {ARAR, CORTAR, PLANTAR, PODAR, REGAR };
     public selecao selec;
 
 }
@@ -21,9 +20,10 @@ class Semente : Item
     public Semente(Tree semente)
     {
         this.semente = semente;
-        selec = selecao.ARADO;
+        selec = selecao.PLANTAR;
         size = semente.size;
         sound = 1;
+        id = semente.level;
     }
 
 
@@ -38,7 +38,7 @@ class Enxada : Item
 {
     public Enxada()
     {
-        selec = selecao.VAZIO;
+        selec = selecao.ARAR;
         size = Vector2Int.one;
         sound = 0;
     }
@@ -52,8 +52,12 @@ class Enxada : Item
         if (tile.obj != null | tile.parent != null)
             return false;
 
-        Sound_player.player.play(0);
-        tile.Arar();
+        if (tile.arado)
+            return false;
+
+        Debug.LogWarning("Habilitar/desabilitar \"arado\"");
+        Board.board.change_mat(tile.position, 3, tile.na_sombra);
+        tile.arado = true;
 
         return true;
     } 
@@ -63,7 +67,7 @@ class Enxada : Item
 class Regador : Item
 {
     public Regador() {
-        selec = selecao.PLANTADO;
+        selec = selecao.REGAR;
         size = Vector2Int.one;
         sound = 3;
     }
@@ -75,7 +79,15 @@ class Regador : Item
         if (tile == null)
             return false;
 
-        return tile.Regar();
+
+        if (!tile.arado)
+            return false;
+
+        //Board.board.change_mat(position, Board.materials.molhado);
+        Debug.LogWarning("mudar material e colocar tempo pra secar");
+
+        tile.molhado = true;
+        return true;
     }
 }
 
@@ -83,7 +95,7 @@ class Tesoura : Item
 {
     public Tesoura()
     {
-        selec = selecao.PLANTADO;
+        selec = selecao.PODAR;
         size = Vector2Int.one;
         sound = 4;
     }
@@ -98,18 +110,55 @@ class Tesoura : Item
         if (tile.parent != null)
             tile = tile.parent;
 
-        if (tile.madura == 0)
+        if (tile.tree._3_poldada == null)
             return false;
 
-        if (tile.tree.poldada_ == null)
+        if (tile.crescendo != 3)
             return false;
 
-        if (tile.Podar())
-        {
-            Debug.Log("Inventory.inventory - adicionar composto");
+
+
+        tile.target_age = tile.tree.tempo_fruto;
+        tile.current_age = 0;
+        tile.current_state = 3;
+        tile.Refresh();
+
+
+        Debug.LogWarning("Ganhar folhas");
+
+        Tempo.tempo.Remove(tile);
+        Tempo.tempo.Add(tile);
+        return true;
+    }
+
+}
+
+class Machado : Item
+{
+    public Machado()
+    {
+        selec = selecao.CORTAR;
+        size = Vector2Int.one;
+        sound = 5;
+    }
+
+    public override bool usar(Vector3 pos, int rot)
+    {
+        Tile tile = Board.board.get(pos);
+
+        if (tile == null)
+            return false;
+
+        if (tile.parent != null)
+            tile = tile.parent;
+
+        if (Board.board.destroy(tile.position)) {
+            Debug.LogWarning("Habilitar/desabilitar \"arado\"");
+            Debug.LogWarning("Dar pontos");
+
             return true;
         }
-
+        
         return false;
     }
 

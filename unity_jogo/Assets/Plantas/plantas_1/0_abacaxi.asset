@@ -14,16 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Abacaxi
   icon: {fileID: -5985375666622007917, guid: a3444b66731c4ac4c8db610d6e774fd2, type: 3}
-  age: 1
+  age: 5
+  level: 0
+  gosta_sombra: 0
   size: {x: 1, y: 1}
-  stages:
-  - {fileID: 919132149155446097, guid: d9c0ffb655616e24296e42bfb7910641, type: 3}
-  - {fileID: 919132149155446097, guid: 95ecdbf5711a16549a6eb83f3c382baf, type: 3}
-  - {fileID: 919132149155446097, guid: 3ba1fcefc4b44654c8d36dbababc7696, type: 3}
-  - {fileID: 919132149155446097, guid: 0ee214dd73b489f48a457903536e015f, type: 3}
-  carregada_: {fileID: 0}
-  carregada_poldada: {fileID: 0}
-  poldada_: {fileID: 0}
-  poldada_carregada: {fileID: 0}
-  colisions: 00000101
-  ph_ideal: 0
+  tempo_crescer: 10
+  tempo_fruto: 5
+  colheitas: 1
+  _broto: {fileID: 6633212530540223098, guid: ee5b38d87622bed44a5d002c6cb8495e, type: 3}
+  _0_jovem: {fileID: 4004760175546555353, guid: 6e629a84b48b7f34196b5a5c557d0934, type: 3}
+  _1_adulta: {fileID: 3050842287972362343, guid: 6e9156dc1111e1d41bb279cfb6f67a48, type: 3}
+  _2_colhida: {fileID: 3611640330718791730, guid: 2d84e5510cffeaa4297e46df88adbca2, type: 3}
+  _3_poldada: {fileID: 0}

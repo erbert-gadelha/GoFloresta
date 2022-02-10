@@ -15,15 +15,13 @@ MonoBehaviour:
   name: Acerola
   icon: {fileID: -2611478236738180621, guid: a3444b66731c4ac4c8db610d6e774fd2, type: 3}
   age: 1
+  level: 2
+  gosta_sombra: 0
   size: {x: 1, y: 1}
-  stages:
-  - {fileID: 919132149155446097, guid: d9c0ffb655616e24296e42bfb7910641, type: 3}
-  - {fileID: 919132149155446097, guid: 5e29ee0d10b6b3047a8a6fbb2cf64051, type: 3}
-  - {fileID: 919132149155446097, guid: cccc7d0adb21dba47af27da789ff9e22, type: 3}
-  - {fileID: 919132149155446097, guid: b716a97a14614c4468801a03a1ec3726, type: 3}
-  carregada_: {fileID: 0}
-  carregada_poldada: {fileID: 0}
-  poldada_: {fileID: 919132149155446097, guid: 30687e4d76976c64bb4ea333dffd1227, type: 3}
-  poldada_carregada: {fileID: 0}
-  colisions: 00000101
-  ph_ideal: 0
+  tempo_crescer: 10
+  tempo_fruto: 5
+  _broto: {fileID: 6633212530540223098, guid: ee5b38d87622bed44a5d002c6cb8495e, type: 3}
+  _0_jovem: {fileID: 0}
+  _1_adulta: {fileID: 0}
+  _2_colhida: {fileID: 0}
+  _3_poldada: {fileID: 0}

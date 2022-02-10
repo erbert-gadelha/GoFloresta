@@ -15,15 +15,13 @@ MonoBehaviour:
   name: "Feij\xE3o-brava"
   icon: {fileID: -6527456407965906944, guid: a3444b66731c4ac4c8db610d6e774fd2, type: 3}
   age: 1
+  level: 0
+  gosta_sombra: 0
   size: {x: 1, y: 1}
-  stages:
-  - {fileID: 919132149155446097, guid: d9c0ffb655616e24296e42bfb7910641, type: 3}
-  - {fileID: 919132149155446097, guid: 8d45c4507308d0c4eb50e8b0f420a4b3, type: 3}
-  - {fileID: 919132149155446097, guid: 1fb203190962c0f4c86dd499a493e095, type: 3}
-  - {fileID: 919132149155446097, guid: ae98a01190b1d3546bf080c3e9d14e8c, type: 3}
-  carregada_: {fileID: 0}
-  carregada_poldada: {fileID: 0}
-  poldada_: {fileID: 0}
-  poldada_carregada: {fileID: 0}
-  colisions: 00000101
-  ph_ideal: 0
+  tempo_crescer: 10
+  tempo_fruto: 5
+  _broto: {fileID: 6633212530540223098, guid: ee5b38d87622bed44a5d002c6cb8495e, type: 3}
+  _0_jovem: {fileID: 2820311336728471287, guid: 9750e54f224410c48ae27f6a1e1e415d, type: 3}
+  _1_adulta: {fileID: 6129435100112734554, guid: 03888b70e22edf5469c4a9289b3dd17b, type: 3}
+  _2_colhida: {fileID: 7536671801585924216, guid: 3c7431a7400f43e4ca75d53836af1964, type: 3}
+  _3_poldada: {fileID: 0}

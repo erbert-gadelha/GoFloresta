@@ -15,15 +15,13 @@ MonoBehaviour:
   name: Milho
   icon: {fileID: 2432236953936985608, guid: a3444b66731c4ac4c8db610d6e774fd2, type: 3}
   age: 1
+  level: 0
+  gosta_sombra: 0
   size: {x: 1, y: 1}
-  stages:
-  - {fileID: 919132149155446097, guid: d9c0ffb655616e24296e42bfb7910641, type: 3}
-  - {fileID: 919132149155446097, guid: 230710b147ea96c469658eda8f02ae03, type: 3}
-  - {fileID: 919132149155446097, guid: eb5b6268f3901b841bc9bae057897cb5, type: 3}
-  - {fileID: 919132149155446097, guid: 123d76c4e6ec224499a89e06e3616d19, type: 3}
-  carregada_: {fileID: 0}
-  carregada_poldada: {fileID: 0}
-  poldada_: {fileID: 0}
-  poldada_carregada: {fileID: 0}
-  colisions: 00000101
-  ph_ideal: 0
+  tempo_crescer: 10
+  tempo_fruto: 5
+  _broto: {fileID: 6633212530540223098, guid: ee5b38d87622bed44a5d002c6cb8495e, type: 3}
+  _0_jovem: {fileID: 919132149155446097, guid: 230710b147ea96c469658eda8f02ae03, type: 3}
+  _1_adulta: {fileID: 919132149155446097, guid: eb5b6268f3901b841bc9bae057897cb5, type: 3}
+  _2_colhida: {fileID: 919132149155446097, guid: 123d76c4e6ec224499a89e06e3616d19, type: 3}
+  _3_poldada: {fileID: 0}

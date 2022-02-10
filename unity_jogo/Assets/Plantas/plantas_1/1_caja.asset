@@ -15,15 +15,14 @@ MonoBehaviour:
   name: "Caj\xE1"
   icon: {fileID: 619426846574319872, guid: a3444b66731c4ac4c8db610d6e774fd2, type: 3}
   age: 1
-  size: {x: 1, y: 1}
-  stages:
-  - {fileID: 919132149155446097, guid: d9c0ffb655616e24296e42bfb7910641, type: 3}
-  - {fileID: 919132149155446097, guid: 6d9cba49dc226af49bc4f2c79dddb2d0, type: 3}
-  - {fileID: 919132149155446097, guid: 8144307058dd69049bb587112216ebde, type: 3}
-  - {fileID: 919132149155446097, guid: e5dcdfb46546d9d4abdef040c97ec1aa, type: 3}
-  carregada_: {fileID: 0}
-  carregada_poldada: {fileID: 0}
-  poldada_: {fileID: 919132149155446097, guid: e5dcdfb46546d9d4abdef040c97ec1aa, type: 3}
-  poldada_carregada: {fileID: 0}
-  colisions: 00000101
-  ph_ideal: 0
+  level: 1
+  gosta_sombra: 0
+  size: {x: 2, y: 2}
+  tempo_crescer: 10
+  tempo_fruto: 5
+  colheitas: 0
+  _broto: {fileID: 6633212530540223098, guid: ee5b38d87622bed44a5d002c6cb8495e, type: 3}
+  _0_jovem: {fileID: 5524725475502337515, guid: 304254ec296581c49a59795e798eb0e3, type: 3}
+  _1_adulta: {fileID: 3959309084419554417, guid: 5fc077fa92c211348834eb00ff45af8b, type: 3}
+  _2_colhida: {fileID: 5524725475502337515, guid: 304254ec296581c49a59795e798eb0e3, type: 3}
+  _3_poldada: {fileID: 2396767976417982131, guid: 9af1c7683f1623e47b5de18ef7f8674a, type: 3}
