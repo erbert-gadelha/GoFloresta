@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: -5985375666622007917, guid: a3444b66731c4ac4c8db610d6e774fd2, type: 3}
   name: Abacaxi
-  description: "Sem descri\xE7\xE3o"
+  description: "~sem descri\xE7\xE3o~"
   id: 0
   qntd: 0
-  value: 0
+  value: 3
   tipo: 1
   seed: {fileID: 11400000, guid: b2ac481e582cc254fb371acd7b8e0431, type: 2}

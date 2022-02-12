@@ -22,9 +22,9 @@ public class Tile : MonoBehaviour
     public Vector2Int position;
 
     public int current_age;
-    [HideInInspector]
+    //[HideInInspector]
     public GameObject obj;
-    [HideInInspector]
+    //[HideInInspector]
     public Tile parent;
     [HideInInspector]
     public Vector3 center;
@@ -33,7 +33,7 @@ public class Tile : MonoBehaviour
     public int current_level;
     public int target_age;
 
-    [HideInInspector]
+    //[HideInInspector]
     public Tile[] childs;
 
 
@@ -126,13 +126,7 @@ public class Tile : MonoBehaviour
 
     }
 
-    public void grow_to(int to)
-    {
-        current_age = to;
-        current_state = (tree.age/current_age);
 
-        Refresh();
-    }
 
     public void Refresh()
     {
@@ -159,14 +153,17 @@ public class Tile : MonoBehaviour
                     current_state = 2;
 
                     com_fruto = true;
-                    current_level = tree.level + 1;
                     Tempo.tempo.Remove(this);
 
+                    current_level = tree.level + 1;
+                    if (current_level >= 2) current_level = 2;
+                    Board.board.change_mat(position, current_level, na_sombra);
 
-                    Board.board.change_mat(position, tree.level + 1, na_sombra);
                     for (int i = 0; i < childs.Length; i++) {
-                        Board.board.change_mat(childs[i].position, tree.level + 1, childs[i].na_sombra);
-                        current_level = tree.level + 1;
+                        Tile child = childs[i];
+
+                        child.current_level = current_level;
+                        Board.board.change_mat(child.position, current_level, child.na_sombra);
                     }
 
                     break;

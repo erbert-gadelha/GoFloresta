@@ -18,10 +18,11 @@ MonoBehaviour:
   level: 0
   gosta_sombra: 0
   size: {x: 1, y: 1}
-  tempo_crescer: 10
-  tempo_fruto: 5
+  tempo_crescer: 12
+  tempo_fruto: 0
+  colheitas: 1
   _broto: {fileID: 6633212530540223098, guid: ee5b38d87622bed44a5d002c6cb8495e, type: 3}
-  _0_jovem: {fileID: 919132149155446097, guid: 230710b147ea96c469658eda8f02ae03, type: 3}
-  _1_adulta: {fileID: 919132149155446097, guid: eb5b6268f3901b841bc9bae057897cb5, type: 3}
-  _2_colhida: {fileID: 919132149155446097, guid: 123d76c4e6ec224499a89e06e3616d19, type: 3}
+  _0_jovem: {fileID: 3856782993131519563, guid: 95efd987f475e294fbd140664a7aa546, type: 3}
+  _1_adulta: {fileID: 4763386278910400345, guid: d2bb7210e2bab1b42ada2363800f8a90, type: 3}
+  _2_colhida: {fileID: 2837753972278546829, guid: 36aa6a81ee17a6b4aaa9624623d380ac, type: 3}
   _3_poldada: {fileID: 0}

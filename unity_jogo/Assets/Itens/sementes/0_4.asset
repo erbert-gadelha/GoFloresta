@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 2432236953936985608, guid: a3444b66731c4ac4c8db610d6e774fd2, type: 3}
   name: Milho
-  description: "Sem descri\xE7\xE3o"
+  description: "~sem descri\xE7\xE3o~"
   id: 0
   qntd: 0
-  value: 0
+  value: 1
   tipo: 1
   seed: {fileID: 11400000, guid: 686dde6a02209b443babc3f5d12be303, type: 2}

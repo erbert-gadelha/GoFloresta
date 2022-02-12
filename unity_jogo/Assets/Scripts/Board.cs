@@ -156,38 +156,41 @@ public class Board : MonoBehaviour
         Tempo.tempo.Remove(tile);
         Destroy(tile.obj);
 
-        if(tile.childs != null)
-        for (int i = 0; i < tile.childs.Length; i++)
-        {
-            tile.childs[i].current_state = 0;
-            tile.childs[i].colision = false;
-            tile.childs[i].plantable = true;
-            tile.childs[i].parent = null;
-            tile.childs[i].obj = null;
-            tile.childs[i].arado = false;
+        if (tile.childs != null)
+        { 
+            if(tile.childs.Length > 0)
+            for (int i = 0; i < tile.childs.Length; i++) {
+                Tile aux = tile.childs[i];
+                if (aux == tile)
+                    continue;
 
-            tile.childs[i].crescendo = 0;
-
-            tile.childs[i].arado = false;
-            tile.tree = null;
-            tile.childs = null;
-            tile.childs[i].current_age = 0;
+                Zerar(aux);
+            }
         }
-        tile.crescendo = 0;
+
+        Zerar(tile);
+        return true;
+    }
+    public void Zerar(Tile tile) {
+        if (tile == null)
+            return;
+
+        change_mat(tile.position, tile.current_level, tile.na_sombra);
+
+        tile.obj = null;
+        tile.tree = null;
+        tile.childs = null;
+        tile.parent = null;
 
         tile.current_state = 0;
         tile.current_age = 0;
+        tile.crescendo = 0;
+        tile.plantable = true;
         tile.colision = false;
         tile.arado = false;
-        tile.plantable = true;
-        tile.parent = null;
-        tile.obj = null;
 
-        tile.tree = null;
-        tile.childs = null;
-
-        return true;
     }
+
 
     public void colher(Vector3 position)
     {

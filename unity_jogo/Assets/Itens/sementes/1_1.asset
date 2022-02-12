@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 1865175470216889779, guid: a3444b66731c4ac4c8db610d6e774fd2, type: 3}
   name: "Caj\xFA"
-  description: "Sem descri\xE7\xE3o"
+  description: "~sem descri\xE7\xE3o~"
   id: 0
   qntd: 0
-  value: 0
+  value: 9
   tipo: 1
   seed: {fileID: 11400000, guid: abd3a612bea44514297a9b5575456d67, type: 2}

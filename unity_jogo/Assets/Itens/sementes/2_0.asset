@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: -2611478236738180621, guid: a3444b66731c4ac4c8db610d6e774fd2, type: 3}
   name: Acerola
-  description: "Sem descri\xE7\xE3o"
+  description: "~sem descri\xE7\xE3o~"
   id: 0
   qntd: 0
-  value: 0
+  value: 7
   tipo: 1
   seed: {fileID: 11400000, guid: ab36628733a923d4fadcc1ae93f8f4dc, type: 2}

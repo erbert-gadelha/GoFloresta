@@ -108,7 +108,7 @@ public class HUD : MonoBehaviour
 
 
 
-            colher[i] = huds[i].GetChild(0).GetChild(3).GetChild(0).GetChild(0).GetComponent<Button>();
+             colher[i] = huds[i].GetChild(0).GetChild(7).GetComponent<Button>();
             _status[i] = huds[i].GetChild(0).GetChild(3).GetComponent<RectTransform>();
             sliders[i] = huds[i].GetChild(0).GetChild(3).GetChild(2).GetComponent<Slider>();
         }
@@ -282,20 +282,25 @@ public class HUD : MonoBehaviour
     }
 
     public void _colher()    {
-        print("chama");
+
         Board.board.colher(_status_pos);
+        colher[0].interactable = false;
+        colher[1].interactable = false;
     }
 
 
 
 
 
-    public void status_visibility(bool param)
-    {
+    public void status_visibility(bool param) {
         _status_visibility = param;
 
         _status[0].gameObject.SetActive(param);
         _status[1].gameObject.SetActive(param);
+
+        
+        colher[0].gameObject.SetActive(param);
+        colher[1].gameObject.SetActive(param);
     }
 
     public void change_to(Vector3 pos, bool visible)

@@ -15,13 +15,14 @@ MonoBehaviour:
   name: "Mam\xE3o"
   icon: {fileID: -4740790581184801126, guid: a3444b66731c4ac4c8db610d6e774fd2, type: 3}
   age: 1
-  level: 2
+  level: 1
   gosta_sombra: 0
   size: {x: 1, y: 1}
-  tempo_crescer: 10
-  tempo_fruto: 5
+  tempo_crescer: 48
+  tempo_fruto: 24
+  colheitas: 1
   _broto: {fileID: 6633212530540223098, guid: ee5b38d87622bed44a5d002c6cb8495e, type: 3}
-  _0_jovem: {fileID: 0}
-  _1_adulta: {fileID: 0}
-  _2_colhida: {fileID: 0}
-  _3_poldada: {fileID: 0}
+  _0_jovem: {fileID: 8649094640358381502, guid: d61a1b4aac4fa434695b8dde289e8092, type: 3}
+  _1_adulta: {fileID: 9075514089321335882, guid: 61bd9074808166b4fbeaa642142de8bd, type: 3}
+  _2_colhida: {fileID: 2917522627211163585, guid: 0d78cb3e3afa8da40809e0194274773a, type: 3}
+  _3_poldada: {fileID: 2983139086862596210, guid: 2e464663590a22840ada52af205c7e0e, type: 3}

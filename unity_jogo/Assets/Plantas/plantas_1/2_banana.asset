@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50c33305f7762d24a93b581491eeacaa, type: 3}
+  m_Name: 2_banana
+  m_EditorClassIdentifier: 
+  name: Bananeira
+  icon: {fileID: 4246112705632052572, guid: a3444b66731c4ac4c8db610d6e774fd2, type: 3}
+  age: 1
+  level: 2
+  gosta_sombra: 0
+  size: {x: 1, y: 1}
+  tempo_crescer: 12
+  tempo_fruto: 6
+  colheitas: 3
+  _broto: {fileID: 6633212530540223098, guid: ee5b38d87622bed44a5d002c6cb8495e, type: 3}
+  _0_jovem: {fileID: 4397871538313058913, guid: 8f75870652a0af84f8b4fd129d26c750, type: 3}
+  _1_adulta: {fileID: 870570914081982683, guid: fa9e2363a9653b64a8b3e25975ad09ca, type: 3}
+  _2_colhida: {fileID: 1814082264883257928, guid: bd2e8829faa78cb4ca11fb0c278387f2, type: 3}
+  _3_poldada: {fileID: 5329266415249947773, guid: 0973eb6c61d888e4691aa0f3a3eeace5, type: 3}
