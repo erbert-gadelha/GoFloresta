@@ -12,7 +12,7 @@ public class Tile : MonoBehaviour
     public Tree tree;
     public bool colision;
     public bool plantable;
-    public bool arado;
+    //public bool arado;
     public bool molhado;
 
     [HideInInspector]
@@ -25,7 +25,7 @@ public class Tile : MonoBehaviour
     //[HideInInspector]
     public GameObject obj;
     //[HideInInspector]
-    public Tile parent;
+    public Tile parent_;
     [HideInInspector]
     public Vector3 center;
 
@@ -48,7 +48,7 @@ public class Tile : MonoBehaviour
     void Start()
     {
         
-        arado = false;
+        arado = null;
         current_age = 0;
         current_level = 0;
         position = new Vector2Int((int)Mathf.Abs(transform.localPosition.x), (int)Mathf.Abs(transform.localPosition.z));
@@ -66,8 +66,11 @@ public class Tile : MonoBehaviour
     //  0-crescendo | 1-dando_fruto  | 2-poldada | 3-parada
     public int crescendo;
 
-    public void grow()
-    {
+    public void grow(bool dia) {
+        if (!tree.gosta_sombra)
+            if (na_sombra | !dia)
+                return;
+
         if (tree == null) {
             Tempo.tempo.Remove(this);
             current_state = -1;
@@ -233,6 +236,17 @@ public class Tile : MonoBehaviour
 
     }
 
+    public GameObject arado;
+
+    public void Arar(bool arar) {
+
+        if (arado != null)
+            Destroy(arado);
+
+        if (arar)
+            arado = Instantiate(Board.board.arado, transform);
+
+    }
 
 
     public GameObject criar(GameObject param) {

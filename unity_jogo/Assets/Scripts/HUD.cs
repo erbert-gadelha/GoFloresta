@@ -279,7 +279,7 @@ public class HUD : MonoBehaviour
         change_hand(aux);
     }
 
-    Vector2Int opened_item;
+    public Vector2Int opened_item;
 
     public void _pause(bool open) {
         huds[orientation].gameObject.SetActive(!open);
@@ -287,6 +287,7 @@ public class HUD : MonoBehaviour
 
         huds[2].gameObject.SetActive(open);
     }
+
 
     public void _load_scene(int scene)
     {
@@ -330,7 +331,19 @@ public class HUD : MonoBehaviour
 
     }
 
-    item get_item() {
+    public void _seed() {
+        Inventory.inventory._seed();
+
+        for (int i = 0; i < 2; i++) {
+            texts[i][4].text = ("x" + Inventory.inventory.bolso[opened_item.x, opened_item.y]);
+            texts[i][13].text = ("x" + Inventory.inventory.bolso[opened_item.x, opened_item.y]);
+            texts[i][11].text = Inventory.inventory.saldo.ToString();
+            texts[i][12].text = Inventory.inventory.saldo.ToString();
+        }
+    }
+
+
+        item get_item() {
         switch (opened_item.x) {
             case 0:
                 return Inventory.inventory.itens_0[opened_item.y];
@@ -344,6 +357,9 @@ public class HUD : MonoBehaviour
     }
 
 
+    public void _dormir() {
+        StartCoroutine(Tempo.tempo._SetTo(6));
+    }
 
     public void status_visibility(bool param) {
         _status_visibility = param;
@@ -361,14 +377,23 @@ public class HUD : MonoBehaviour
         _status_pos = pos;
         Tile tile = Board.board.get(pos);
 
-        if (tile == null)
-        {
+        if (tile == null) {
             status_visibility(false);
             return;
         }
 
-        if (tile.parent != null)
-            tile = tile.parent;
+        if (tile.tipo == Tile.tipos.interacao & Tempo.tempo.noite) {
+            huds[0].GetChild(0).GetChild(8).gameObject.SetActive(true);
+            huds[1].GetChild(0).GetChild(8).gameObject.SetActive(true);
+            return;
+        } else {
+            huds[0].GetChild(0).GetChild(8).gameObject.SetActive(false);
+            huds[1].GetChild(0).GetChild(8).gameObject.SetActive(false);
+
+        }
+
+        if (tile.parent_ != null)
+            tile = tile.parent_;
 
         Tree tree = tile.tree;
         if (tree == null)
@@ -417,8 +442,8 @@ public class HUD : MonoBehaviour
             return;
         }
 
-        if (tile.parent != null)
-            tile = tile.parent;
+        if (tile.parent_ != null)
+            tile = tile.parent_;
 
         Tree tree = tile.tree;
         if (tree == null)
@@ -543,7 +568,7 @@ public class HUD : MonoBehaviour
                 images[i][4].enabled = true;
                 images[i][5].enabled = true;
                  texts[i][4].enabled = true;
-                texts[i][4].text = ("x"+Inventory.inventory.bolso[opened_item.y, opened_item.x]);
+                texts[i][4].text = ("x"+Inventory.inventory.bolso[opened_item.x, opened_item.y]);
 
                 texts[i][3].text = item.description;
                 texts[i][3].enabled = true;

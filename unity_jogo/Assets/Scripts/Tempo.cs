@@ -7,7 +7,7 @@ public class Tempo : MonoBehaviour
 {
 
     [SerializeField]
-    Animator obj;
+    Animator obj, cortina;
 
     bool running = false;
     public static Tempo tempo;
@@ -31,6 +31,9 @@ public class Tempo : MonoBehaviour
 
     void Start() {
         //Debug.LogWarning("No CastingShadow");
+
+        _transicao_ = _color_to(cores[0]);
+        StartCoroutine(_transicao_);
         SetTo(hora);
 
         tempo = this;
@@ -49,7 +52,7 @@ public class Tempo : MonoBehaviour
     public void Skip()
     {
         for (int i = 0; i < plantas.Count; i++)
-            plantas[i].grow();
+            plantas[i].grow(!noite);
 
         HUD.hud.Refresh();
 
@@ -62,33 +65,76 @@ public class Tempo : MonoBehaviour
         hr.eulerAngles = new Vector3(0, 0, -(hora * 720) / 24);
 
 
-        if ((to > 4) & (to <= 8))         //MANHA
+        if ((to > 4) & (to <= 8))
+        {         //MANHA
             obj.SetTrigger("dia");
-        else if ((to >= 15) & (to <= 20))  //TARDE
+            StopCoroutine(_transicao_);
+            _transicao_ = _color_to(cores[0]);
+            StartCoroutine(_transicao_);
+        }
+        else if ((to >= 15) & (to <= 20))
+        {  //TARDE
             obj.SetTrigger("tarde");
-        else                             //NOITE
+            StopCoroutine(_transicao_);
+            _transicao_ = _color_to(cores[1]);
+            StartCoroutine(_transicao_);
+        }
+        else
+        {                            //NOITE
             obj.SetTrigger("noite");
+            StopCoroutine(_transicao_);
+            _transicao_ = _color_to(cores[2]);
+            StartCoroutine(_transicao_);
+        }
 
     }
+    public IEnumerator _SetTo(int to) {
+        cortina.SetTrigger("fechar");
+        yield return new WaitForSeconds(0.5f);
+        SetTo(to);
+        yield return new WaitForSeconds(0.5f);
+        cortina.SetTrigger("abrir");
+    }
 
+    public Color[] cores;
     void Refresh()
     {
         switch (hora)
         {
             case 5:
                 obj.SetTrigger("dia");
+                StopCoroutine(_transicao_);
+                _transicao_ = _color_to(cores[0]);
+                StartCoroutine(_transicao_);
+                noite = false;
                 break;
             case 18:
                 obj.SetTrigger("tarde");
+                StopCoroutine(_transicao_);
+                _transicao_ = _color_to(cores[1]);
+                StartCoroutine(_transicao_);
+                noite = true;
                 break;
             case 20:
                 obj.SetTrigger("noite");
+                StopCoroutine(_transicao_);
+                _transicao_ = _color_to(cores[2]);
+                StartCoroutine(_transicao_);
                 break;
         }
 
     }
 
-    IEnumerator a;
+    public float vel;
+    IEnumerator _color_to(Color to) {
+
+        while (Camera.main.backgroundColor != to) {
+            Camera.main.backgroundColor = Color.Lerp(Camera.main.backgroundColor, to, vel);
+            yield return new WaitForFixedUpdate();
+        }
+    }
+
+    IEnumerator _relogio_, _transicao_;
     public void Running(bool param)
     {
         if (param == running)
@@ -97,10 +143,10 @@ public class Tempo : MonoBehaviour
         running = param;
 
         if (!running) {
-            StopCoroutine(a);
+            StopCoroutine(_relogio_);
         } else {
-            a = _clock();
-            StartCoroutine(a);
+            _relogio_ = _clock();
+            StartCoroutine(_relogio_);
         }
     }
 
@@ -158,6 +204,7 @@ public class Tempo : MonoBehaviour
             StartCoroutine(_polinizador(new Vector2Int( (int)(Random.value * 14), (int)(Random.value * 19) )));
     }
 
+    public bool noite;
 
 
 
@@ -191,11 +238,11 @@ public class Tempo : MonoBehaviour
     }
 
 
-    
+    /*
     private void OnGUI()
     {
         if((hora > 18) | (hora<5))
             if (GUI.Button(new Rect(50, 70, 80, 40), "Dormir"))
                 SetTo(8);
-    }
+    }*/
 }

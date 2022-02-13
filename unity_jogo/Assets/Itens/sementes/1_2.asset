@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33dd6953449da994aa6ad8786027e4a4, type: 3}
   m_Name: 1_2
   m_EditorClassIdentifier: 
-  icon: {fileID: -6578267993364069794, guid: 1c9bc0d104c01934da10d4333b9dc48b, type: 3}
+  icon: {fileID: 21300000, guid: 66e6fa2f94f3f9a48a4c990298fb339e, type: 3}
   name: "Ip\xEA Roxo"
   description: "~sem descri\xE7\xE3o~"
   id: 0

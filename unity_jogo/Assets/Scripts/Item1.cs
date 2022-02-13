@@ -49,15 +49,14 @@ class Enxada : Item
         if (tile == null)
             return false;
 
-        if (tile.obj != null | tile.parent != null)
+        if (tile.obj != null | tile.parent_ != null)
             return false;
 
         if (tile.arado)
             return false;
 
         Debug.LogWarning("Habilitar/desabilitar \"arado\"");
-        Board.board.change_mat(tile.position, 3, tile.na_sombra);
-        tile.arado = true;
+        tile.Arar(true);
 
         return true;
     } 
@@ -107,8 +106,8 @@ class Tesoura : Item
         if (tile == null)
             return false;
 
-        if (tile.parent != null)
-            tile = tile.parent;
+        if (tile.parent_ != null)
+            tile = tile.parent_;
 
         if (tile.tree._3_poldada == null)
             return false;
@@ -120,11 +119,11 @@ class Tesoura : Item
 
         tile.target_age = tile.tree.tempo_fruto;
         tile.current_age = 0;
-        tile.current_state = 3;
+        tile.current_state = 4;
         tile.Refresh();
 
 
-        Debug.LogWarning("Ganhar folhas");
+        Inventory.inventory.saldo += tile.tree.ganho_polda;
 
         Tempo.tempo.Remove(tile);
         Tempo.tempo.Add(tile);
@@ -149,8 +148,8 @@ class Machado : Item
         if (tile == null)
             return false;
 
-        if (tile.parent != null)
-            tile = tile.parent;
+        if (tile.parent_ != null)
+            tile = tile.parent_;
 
         if (Board.board.destroy(tile.position)) {
             Debug.LogWarning("Habilitar/desabilitar \"arado\"");

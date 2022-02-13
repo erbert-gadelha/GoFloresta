@@ -27,7 +27,6 @@ public class Sound_player : MonoBehaviour
         for (int i = 0; i < source.Length; i++)
             source[i] = gameObject.AddComponent<AudioSource>();
 
-        source[2].volume = 0.1f;
         source[0].volume = 0.5f;
     }
 

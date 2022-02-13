@@ -31,6 +31,7 @@ public class Board : MonoBehaviour
 
 
     public GameObject broto;
+    public GameObject arado;
 
 
 
@@ -125,12 +126,15 @@ public class Board : MonoBehaviour
             if (aux.childs[i] == null)
                 continue;
 
-            change_mat(aux.childs[i].position, tree.level, aux.childs[i].na_sombra);
-            aux.childs[i].parent = aux;
+
+            //change_mat(aux.childs[i].position, tree.level, aux.childs[i].na_sombra);
+            aux.childs[i].Arar(false);
+            aux.childs[i].parent_ = aux;
         }
 
-        change_mat(aux.position, tree.level, aux.na_sombra);
-        aux.parent = null;
+        //change_mat(aux.position, tree.level, aux.na_sombra);
+        aux.Arar(false);
+        aux.parent_ = null;
         aux.center = pos;
 
         aux.tree = tree;
@@ -180,14 +184,15 @@ public class Board : MonoBehaviour
         tile.obj = null;
         tile.tree = null;
         tile.childs = null;
-        tile.parent = null;
+        tile.parent_ = null;
 
+        tile.com_fruto = false;
         tile.current_state = 0;
         tile.current_age = 0;
         tile.crescendo = 0;
         tile.plantable = true;
         tile.colision = false;
-        tile.arado = false;
+        tile.Arar(false);
 
     }
 
@@ -198,8 +203,8 @@ public class Board : MonoBehaviour
         if (tile == null)
             return;
 
-        if (tile.parent != null)
-            tile = tile.parent;
+        if (tile.parent_ != null)
+            tile = tile.parent_;
 
         Inventory.inventory.saldo += tile.tree.ganho_colheita;
         tile.current_state = 3;
@@ -274,7 +279,7 @@ public class Board : MonoBehaviour
                     {
                         // ARAR
                         case 0:    // [-n.ARADO -VAZIO]
-                            if (aux.obj != null | aux.parent != null) {
+                            if (aux.obj != null | aux.parent_ != null | !aux.plantable) {
                                 state = 2;
                                 retorno = false;
                             } else if (aux.arado) {
@@ -287,7 +292,7 @@ public class Board : MonoBehaviour
 
                         // CORTAR
                         case 1:    // [-PLANTADO]
-                            if (aux.obj != null | aux.parent != null) {
+                            if (aux.obj != null | aux.parent_ != null) {
                                 state = 1;
                             } else {
                                 state = 2;
@@ -297,10 +302,10 @@ public class Board : MonoBehaviour
 
                         // PLANTAR
                         case 2:    // [-ARADO -VAZIO]
-                            if (aux.obj != null | aux.parent != null) {//PLANTADO
+                            if (aux.obj != null | aux.parent_ != null) {//PLANTADO
                                 state = 2;
                                 retorno = false;
-                            } else if (aux.arado) {//ARADO
+                            } else if (aux.arado != null) {//ARADO
                                 if (aux.current_level < item.id)    //NIVEL ERRADO
                                 {
                                     retorno = false;
@@ -316,8 +321,11 @@ public class Board : MonoBehaviour
 
                         // PODAR
                         case 3:    // [-PLANTADO]
-                            if (aux.obj != null | aux.parent != null)
-                            {
+                            if (aux.obj != null | aux.parent_ != null) {
+
+                                if (aux.parent_ != null)
+                                    aux = aux.parent_;
+
                                 if (aux.crescendo == 3)
                                     state = 1;
                                 else {
@@ -332,7 +340,7 @@ public class Board : MonoBehaviour
 
                         // REGAR
                         case 4:    // [-PLANTADO]
-                            if (aux.obj != null | aux.parent != null) {
+                            if (aux.obj != null | aux.parent_ != null) {
                                 state = 1;
                             } else {
                                 state = 2;
