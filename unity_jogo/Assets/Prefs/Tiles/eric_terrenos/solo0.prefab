@@ -52,14 +52,19 @@ MonoBehaviour:
   arado: 0
   molhado: 0
   mesh: {fileID: 0}
-  currt_state: 0
+  current_state: 0
   position: {x: 0, y: 0}
-  curnt_age: 0
+  current_age: 0
   obj: {fileID: 0}
   parent: {fileID: 0}
   center: {x: 0, y: 0, z: 0}
-  madura: 0
+  colheitas: 0
+  current_level: 0
+  target_age: 0
   childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
 --- !u!1 &6667456004125046615
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,7 +124,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4aa9f4d3e1d5147439c1ac7fb6eda1fa, type: 2}
+  - {fileID: 2100000, guid: 394511d20110a8e479f83745796cb665, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

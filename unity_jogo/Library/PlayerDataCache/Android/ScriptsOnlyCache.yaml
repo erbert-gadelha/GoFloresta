@@ -30,9 +30,13 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
     Unity.CollabProxy.Editor.dll:
     - Unity.Cloud.Collaborate.UserInterface.CollaborateWindow
-    - Unity.Cloud.Collaborate.UserInterface.WindowCache
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    Unity.TextMeshPro.dll:
+    - TMPro.TMP_FontAsset
+    - TMPro.TMP_Settings
+    - TMPro.TMP_SpriteAsset
+    - TMPro.TMP_StyleSheet
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -44,6 +48,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Outline
     - UnityEngine.UI.RectMask2D
     - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.Slider
@@ -68,6 +73,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
@@ -81,21 +88,31 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1438}
+      Script: {instanceID: 1436}
     - Class: 114
-      Script: {instanceID: 2084}
+      Script: {instanceID: 1766}
     - Class: 114
-      Script: {instanceID: 2452}
+      Script: {instanceID: 2076}
     - Class: 114
-      Script: {instanceID: 2598}
+      Script: {instanceID: 2086}
     - Class: 114
-      Script: {instanceID: 2770}
+      Script: {instanceID: 2454}
     - Class: 114
-      Script: {instanceID: 2980}
+      Script: {instanceID: 2600}
     - Class: 114
-      Script: {instanceID: 3082}
+      Script: {instanceID: 2772}
     - Class: 114
-      Script: {instanceID: 4228}
+      Script: {instanceID: 2982}
+    - Class: 114
+      Script: {instanceID: 3084}
+    - Class: 114
+      Script: {instanceID: 3346}
+    - Class: 114
+      Script: {instanceID: 4226}
+    - Class: 114
+      Script: {instanceID: 4230}
+    - Class: 114
+      Script: {instanceID: 4556}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -148,47 +165,47 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
+      Script: {instanceID: 1436}
+    - Class: 114
       Script: {instanceID: 1438}
     - Class: 114
-      Script: {instanceID: 1440}
+      Script: {instanceID: 1900}
     - Class: 114
-      Script: {instanceID: 1898}
+      Script: {instanceID: 1982}
     - Class: 114
-      Script: {instanceID: 1980}
+      Script: {instanceID: 2086}
     - Class: 114
-      Script: {instanceID: 2084}
+      Script: {instanceID: 2350}
     - Class: 114
-      Script: {instanceID: 2348}
+      Script: {instanceID: 2398}
     - Class: 114
-      Script: {instanceID: 2396}
+      Script: {instanceID: 2454}
     - Class: 114
-      Script: {instanceID: 2452}
+      Script: {instanceID: 2600}
     - Class: 114
-      Script: {instanceID: 2598}
+      Script: {instanceID: 2676}
     - Class: 114
-      Script: {instanceID: 2674}
+      Script: {instanceID: 2772}
     - Class: 114
-      Script: {instanceID: 2770}
+      Script: {instanceID: 2982}
     - Class: 114
-      Script: {instanceID: 2980}
+      Script: {instanceID: 3084}
     - Class: 114
-      Script: {instanceID: 3082}
+      Script: {instanceID: 3358}
     - Class: 114
-      Script: {instanceID: 3356}
+      Script: {instanceID: 3418}
     - Class: 114
-      Script: {instanceID: 3416}
+      Script: {instanceID: 3638}
     - Class: 114
-      Script: {instanceID: 3636}
+      Script: {instanceID: 3728}
     - Class: 114
-      Script: {instanceID: 3726}
+      Script: {instanceID: 4088}
     - Class: 114
-      Script: {instanceID: 4086}
+      Script: {instanceID: 4130}
     - Class: 114
-      Script: {instanceID: 4128}
+      Script: {instanceID: 4188}
     - Class: 114
-      Script: {instanceID: 4186}
-    - Class: 114
-      Script: {instanceID: 4204}
+      Script: {instanceID: 4206}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -198,6 +215,10 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
       Script: {instanceID: 0}
     - Class: 210
       Script: {instanceID: 0}
@@ -312,7 +333,7 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
-      Hash: 8e3b8db1f384a16aa7fc1126c8131141
+      Hash: 29de2729ce867601cba22b5cbe409bba
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Tempo
@@ -390,7 +411,7 @@ ScriptsOnlyBuild:
     className: EnumerableTestState
   - hash:
       serializedVersion: 2
-      Hash: ad88b50541c63a66150a8f6c1a8e0ee9
+      Hash: 0da46965215fd50c535ed3942cca3c16
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Inventory
@@ -720,7 +741,7 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
-      Hash: 1a05a383cbf25aa855ea9ad86056a326
+      Hash: 77b1b00e3dc8781704fcee59d0a6710a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Tree
@@ -756,7 +777,7 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: bc532cf6024be1658def41ff505baabf
+      Hash: 7e966583cc0e5a49aacc6c42daaa945e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Controle

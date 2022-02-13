@@ -187,7 +187,6 @@ public class Tile : MonoBehaviour
                     }
 
                     break;
-                    /*
                 case 4:
                     aux = tree._3_poldada;
                     colisao = true;
@@ -208,7 +207,6 @@ public class Tile : MonoBehaviour
                     }
 
                     break;
-                    */
             }
 
             if (aux == null)

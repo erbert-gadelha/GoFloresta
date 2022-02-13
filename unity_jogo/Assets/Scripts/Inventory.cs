@@ -9,10 +9,12 @@ public class Inventory : MonoBehaviour
     public static Inventory inventory;
 
     [SerializeField]
-    public item[] itens_0 = new item[0], itens_1 = new item[0], itens_2 = new item[0], itens_3 = new item[0], itens_4 = new item[0];
+    public item[] itens_0 = new item[0], itens_1 = new item[0], itens_2 = new item[0], itens_3 = new item[0];
 
     Transform hand;
+    public int saldo;
 
+    public int[,] bolso;
     int tool;
 
     Item[] _item;
@@ -20,6 +22,8 @@ public class Inventory : MonoBehaviour
     void Awake()
     {
         _item = new Item[2];
+
+        bolso = new int[4, 5];
 
         on_use = -1;
         tool = -1;

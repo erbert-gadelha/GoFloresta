@@ -21,6 +21,8 @@ MonoBehaviour:
   tempo_crescer: 84
   tempo_fruto: 42
   colheitas: 3
+  ganho_colheita: 40
+  ganho_polda: 5
   _broto: {fileID: 6633212530540223098, guid: ee5b38d87622bed44a5d002c6cb8495e, type: 3}
   _0_jovem: {fileID: 4667192594749486624, guid: 2964b9b3938acd34a8dfa43d9b476498, type: 3}
   _1_adulta: {fileID: 2334689224381616250, guid: 4b42c5d9284dd3f43b12516eea005703, type: 3}

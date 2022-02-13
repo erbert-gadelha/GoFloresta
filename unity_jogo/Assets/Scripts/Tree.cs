@@ -14,6 +14,8 @@ public class Tree : ScriptableObject
     public int tempo_crescer;
     public int tempo_fruto;
     public int colheitas;
+    public int ganho_colheita;
+    public int ganho_polda;
 
     [Header("Stages")]
     public GameObject _broto;

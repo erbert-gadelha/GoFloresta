@@ -89,8 +89,9 @@ public class HUD : MonoBehaviour
         {
             int txt = 0, img = 0;
             //STATUS
-            texts[i][txt++] = huds[i].GetChild(0).GetChild(3).GetChild(1).GetComponent<Text>();
+             texts[i][txt++] = huds[i].GetChild(0).GetChild(3).GetChild(1).GetComponent<Text>();
             images[i][img++] = huds[i].GetChild(0).GetChild(3).GetChild(0).GetChild(0).GetComponent<Image>();
+             texts[i][5]     = huds[i].GetChild(0).GetChild(3).GetChild(4).GetChild(0).GetComponent<Text>();
 
             //EQUIPADO - MAO
             images[i][img++] = huds[i].GetChild(0).GetChild(4).GetChild(0).GetChild(0).GetComponent<Image>();
@@ -106,9 +107,17 @@ public class HUD : MonoBehaviour
             images[i][img++] = huds[i].GetChild(0).GetChild(4).GetChild(1).GetChild(1).GetComponent<Image>();
              texts[i][txt++] = huds[i].GetChild(0).GetChild(4).GetChild(1).GetChild(2).GetComponent<Text>();
 
+            //PRECO
+             texts[i][10] = huds[i].GetChild(1).GetChild(0).GetChild(1).GetChild(2).GetChild(0).GetComponent<Text>();
+             texts[i][11] = huds[i].GetChild(0).GetChild(6).GetChild(1).GetComponent<Text>();
+             texts[i][12] = huds[i].GetChild(1).GetChild(0).GetChild(0).GetChild(0).GetChild(4).GetChild(1).GetComponent<Text>();
+             texts[i][13] = huds[i].GetChild(1).GetChild(0).GetChild(1).GetChild(2).GetChild(1).GetComponent<Text>();
+
+            texts[i][11].text = Inventory.inventory.saldo.ToString();
+            texts[i][12].text = Inventory.inventory.saldo.ToString();
 
 
-             colher[i] = huds[i].GetChild(0).GetChild(7).GetComponent<Button>();
+            colher[i] = huds[i].GetChild(0).GetChild(7).GetComponent<Button>();
             _status[i] = huds[i].GetChild(0).GetChild(3).GetComponent<RectTransform>();
             sliders[i] = huds[i].GetChild(0).GetChild(3).GetChild(2).GetComponent<Slider>();
         }
@@ -256,18 +265,21 @@ public class HUD : MonoBehaviour
 
     public void _pressed(int index)
     {
+        opened_item = new Vector2Int(open_in, index);
+
         item aux;
         switch (open_in)
         {
             case 0:     aux = Inventory.inventory.itens_0[index]; break;   //FERRAMENTAS
             case 1:     aux = Inventory.inventory.itens_1[index]; break;   //ITENS 0
             case 2:     aux = Inventory.inventory.itens_2[index]; break;   //ITENS 1
-            case 3:     aux = Inventory.inventory.itens_3[index]; break;   //ITENS 2
-            default:    aux = Inventory.inventory.itens_4[index]; break;   //LOJA
+            default:     aux = Inventory.inventory.itens_3[index]; break;  //ITENS 2
         }
 
         change_hand(aux);
     }
+
+    Vector2Int opened_item;
 
     public void _pause(bool open) {
         huds[orientation].gameObject.SetActive(!open);
@@ -284,11 +296,52 @@ public class HUD : MonoBehaviour
     public void _colher()    {
 
         Board.board.colher(_status_pos);
+
         colher[0].interactable = false;
         colher[1].interactable = false;
+        texts[0][11].text = Inventory.inventory.saldo.ToString();
+        texts[0][12].text = Inventory.inventory.saldo.ToString();
+        texts[1][11].text = Inventory.inventory.saldo.ToString();
+        texts[1][12].text = Inventory.inventory.saldo.ToString();
     }
 
+    public void _comprar() {
 
+        item item = get_item();
+        if (item.tipo == Inventory.tipo.FERRAMENTA)
+            return;
+
+
+        int valor = item.value;
+        if (valor <= Inventory.inventory.saldo) {
+            Inventory.inventory.bolso[opened_item.x, opened_item.y]++;
+            Inventory.inventory.saldo -= valor;
+        }
+
+
+        Debug.Log("Comprar item por: " + valor);
+        for (int i = 0; i < 2; i++) {
+             huds[i].GetChild(1).GetChild(0).GetChild(1).GetChild(2).GetComponent<Button>().interactable = (valor <= Inventory.inventory.saldo);
+            texts[i][4].text = ("x" + Inventory.inventory.bolso[opened_item.x, opened_item.y]);
+            texts[i][13].text = ("x" + Inventory.inventory.bolso[opened_item.x, opened_item.y]);
+            texts[i][11].text = Inventory.inventory.saldo.ToString();
+            texts[i][12].text = Inventory.inventory.saldo.ToString();
+        }
+
+    }
+
+    item get_item() {
+        switch (opened_item.x) {
+            case 0:
+                return Inventory.inventory.itens_0[opened_item.y];
+            case 1:
+                return Inventory.inventory.itens_1[opened_item.y];
+            case 2:
+                return Inventory.inventory.itens_2[opened_item.y];
+            default:
+                return Inventory.inventory.itens_3[opened_item.y];
+        }
+    }
 
 
 
@@ -334,6 +387,9 @@ public class HUD : MonoBehaviour
 
         texts[0][0].text = tree.name;
         texts[1][0].text = tree.name;
+
+        texts[0][5].text = ("SOLO: " + tile.current_level.ToString());
+        texts[1][5].text = ("SOLO: " + tile.current_level.ToString());
 
 
         status_visibility(true);
@@ -383,9 +439,14 @@ public class HUD : MonoBehaviour
         texts[0][0].text = tree.name;
         texts[1][0].text = tree.name;
 
+        texts[0][5].text = ("SOLO: " + tile.current_level.ToString());
+        texts[1][5].text = ("SOLO: " + tile.current_level.ToString());
+
+
         status_visibility(true);
         sliders[0].value = value;
         sliders[1].value = value;
+
 
 
         colher[0].interactable = tile.com_fruto;
@@ -425,6 +486,8 @@ public class HUD : MonoBehaviour
                  texts[i][2].enabled = false;
                  texts[i][3].enabled = false;
                  texts[i][4].enabled = false;
+
+                huds[i].GetChild(1).GetChild(0).GetChild(1).GetChild(2).gameObject.SetActive(false);
             }
 
             return;
@@ -433,11 +496,9 @@ public class HUD : MonoBehaviour
         for (int i = 0; i < 2; i++)
         {
              texts[i][2].text = item.name;
-             texts[i][3].text = item.description;
             images[i][3].sprite = item.icon;
 
              texts[i][2].enabled = true;
-             texts[i][3].enabled = true;
             images[i][3].enabled = true;
 
 
@@ -458,19 +519,39 @@ public class HUD : MonoBehaviour
                         aux = new Machado();
                         break;
                 }
-                
+
                 Inventory.inventory.change_tool(aux, item.id);
+                //FERRAMENTA
                 images[i][2].sprite = item.icon;
                 images[i][1].enabled = true;
                 images[i][2].enabled = true;
-            }
-            else {
+
+                texts[i][3].text = item.description;
+                texts[i][3].enabled = true;
+
+
+                huds[i].GetChild(1).GetChild(0).GetChild(1).GetChild(2).gameObject.SetActive(false);
+
+
+            } else {
+
                 Inventory.inventory.change_seed(item.seed);
+                //SEMENTE
+
+
                 images[i][5].sprite = item.icon;
                 images[i][4].enabled = true;
                 images[i][5].enabled = true;
-                 texts[i][4].text = item.qntd.ToString();
                  texts[i][4].enabled = true;
+                texts[i][4].text = ("x"+Inventory.inventory.bolso[opened_item.y, opened_item.x]);
+
+                texts[i][3].text = item.description;
+                texts[i][3].enabled = true;
+
+                texts[i][10].text = item.value.ToString();
+                texts[i][13].text = "x" + Inventory.inventory.bolso[opened_item.x, opened_item.y];
+                huds[i].GetChild(1).GetChild(0).GetChild(1).GetChild(2).gameObject.SetActive(true);
+                huds[i].GetChild(1).GetChild(0).GetChild(1).GetChild(2).GetComponent<Button>().interactable = (item.value <= Inventory.inventory.saldo);
             }
                 
         }
@@ -494,8 +575,7 @@ public class HUD : MonoBehaviour
             case 0:     aux = Inventory.inventory.itens_0; break;   //FERRAMENTAS
             case 1:     aux = Inventory.inventory.itens_1; break;   //ITENS 0
             case 2:     aux = Inventory.inventory.itens_2; break;   //ITENS 1
-            case 3:     aux = Inventory.inventory.itens_3; break;   //ITENS 2
-            default:    aux = Inventory.inventory.itens_4; break;   //LOJA
+            default:     aux = Inventory.inventory.itens_3; break;  //ITENS 2
         }
 
         int i;
@@ -507,7 +587,22 @@ public class HUD : MonoBehaviour
             {
                 card[j, i].GetChild(0).GetChild(0).GetComponent<Image>().sprite = aux[i].icon; // icon
                 card[j, i].GetChild(1).GetComponent<Text>().text = aux[i].name;                // title
-                card[j, i].GetChild(2).GetComponent<Text>().text = aux[i].description;         // description
+
+                if (tab == 0) {
+                    card[j, i].GetChild(2).GetComponent<Text>().text = aux[i].description;
+                    card[j, i].GetChild(2).gameObject.SetActive(true);
+                    card[j, i].GetChild(3).gameObject.SetActive(false);
+                }
+                else 
+                {
+                    card[j, i].GetChild(3).GetChild(0).GetChild(0).GetComponent<Text>().text = aux[i].name;
+                    card[j, i].GetChild(3).GetChild(1).GetChild(0).GetComponent<Text>().text = aux[i].name;
+                    card[j, i].GetChild(3).GetChild(2).GetChild(0).GetComponent<Text>().text = aux[i].name;
+                    card[j, i].GetChild(3).GetChild(3).GetChild(0).GetComponent<Text>().text = aux[i].name;
+
+                    card[j, i].GetChild(2).gameObject.SetActive(false);
+                    card[j, i].GetChild(3).gameObject.SetActive(true);
+                }
 
                 card[j, i].gameObject.SetActive(true);
                 i++;
@@ -517,15 +612,14 @@ public class HUD : MonoBehaviour
             RectTransform _aux;
 
              _aux = huds[0].transform.GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(0).gameObject.GetComponent<RectTransform>();
-            _aux.sizeDelta = new Vector2(_aux.sizeDelta.x, 191 * (i + 0.5f));
+            _aux.sizeDelta = new Vector2(_aux.sizeDelta.x, 226 * (i + 0.5f));
 
             _aux = huds[1].transform.GetChild(1).GetChild(0).GetChild(0).GetChild(1).GetChild(0).gameObject.GetComponent<RectTransform>();
             _aux.sizeDelta = new Vector2(_aux.sizeDelta.x, 271 * (i + 0.5f));
 
 
 
-            while (i < card.GetLength(1))
-            {
+            while (i < card.GetLength(1)) {
                 card[j, i].gameObject.SetActive(false);
                 i++;
             }

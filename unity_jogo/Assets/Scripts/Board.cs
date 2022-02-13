@@ -201,7 +201,7 @@ public class Board : MonoBehaviour
         if (tile.parent != null)
             tile = tile.parent;
 
-
+        Inventory.inventory.saldo += tile.tree.ganho_colheita;
         tile.current_state = 3;
         tile.Refresh();
     }
