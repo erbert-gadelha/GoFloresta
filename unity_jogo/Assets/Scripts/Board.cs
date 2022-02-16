@@ -193,7 +193,7 @@ public class Board : MonoBehaviour
         tile.plantable = true;
         tile.colision = false;
         tile.Arar(false);
-
+        tile.nivel_agua = 0;
     }
 
 
@@ -206,6 +206,7 @@ public class Board : MonoBehaviour
         if (tile.parent_ != null)
             tile = tile.parent_;
 
+        Sound_player.player.play(6);
         Inventory.inventory.saldo += tile.tree.ganho_colheita;
         tile.current_state = 3;
         tile.Refresh();
@@ -389,6 +390,47 @@ public class Board : MonoBehaviour
         _hints.SetActive(false);
     }
 
+
+    public void plant_at(Tree tree, Vector2 pos_, int rot, int c_age, int t_age, int c_stt, int colheitas)
+    {
+        Tile[] childs;
+        Tile aux;
+
+        int size = tree.size.x * tree.size.y;
+        if (size > 1)
+        {
+            childs = new Tile[4];
+
+            childs[0] = get((int)(pos_.x + 0.5f), (int)(pos_.y + 0.5f));
+            childs[1] = get((int)(pos_.x - 0.5f), (int)(pos_.y + 0.5f));
+            childs[2] = get((int)(pos_.x - 0.5f), (int)(pos_.y - 0.5f));
+            childs[3] = get((int)(pos_.x + 0.5f), (int)(pos_.y - 0.5f));
+
+            childs[1].parent_ = childs[0];
+            childs[2].parent_ = childs[0];
+            childs[3].parent_ = childs[0];
+            aux = childs[0];
+            aux.center = new Vector3(pos_.x, 0, pos_.y);
+        }
+        else
+        {
+            childs = new Tile[0];
+            aux = get((int)pos_.x, (int)pos_.y);
+            aux.center = new Vector3(pos_.x, 0, pos_.y);
+        }
+
+        aux.parent_ = null;
+        aux.childs = childs;
+        aux.rotation = rot;
+        aux.current_age = c_age;
+        aux.target_age = t_age;
+        aux.current_state = c_stt;
+        aux.colheitas = colheitas;
+        aux.tree = tree;
+
+        aux.Refresh();
+        Tempo.tempo.Add(aux);
+    }
 
     public void castShadows(Vector3 direc)
     {

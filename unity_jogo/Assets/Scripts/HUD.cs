@@ -300,6 +300,11 @@ public class HUD : MonoBehaviour
 
         colher[0].interactable = false;
         colher[1].interactable = false;
+        att_saldo();
+    }
+
+
+    public void att_saldo() {
         texts[0][11].text = Inventory.inventory.saldo.ToString();
         texts[0][12].text = Inventory.inventory.saldo.ToString();
         texts[1][11].text = Inventory.inventory.saldo.ToString();
@@ -424,6 +429,11 @@ public class HUD : MonoBehaviour
         colher[0].interactable = tile.com_fruto;
         colher[1].interactable = tile.com_fruto;
 
+
+        huds[0].GetChild(0).GetChild(3).GetChild(3).GetChild(1).GetComponent<Slider>().value = (((float)tile.nivel_agua) / ((float)tree.agua));
+        huds[1].GetChild(0).GetChild(3).GetChild(3).GetChild(1).GetComponent<Slider>().value = (((float)tile.nivel_agua)/((float)tree.agua));
+
+
         images[0][0].sprite = tree.icon;
         images[1][0].sprite = tree.icon;
 
@@ -472,6 +482,8 @@ public class HUD : MonoBehaviour
         sliders[0].value = value;
         sliders[1].value = value;
 
+        huds[0].GetChild(0).GetChild(3).GetChild(3).GetChild(1).GetComponent<Slider>().value = (((float)tile.nivel_agua) / ((float)tree.agua));
+        huds[1].GetChild(0).GetChild(3).GetChild(3).GetChild(1).GetComponent<Slider>().value = (((float)tile.nivel_agua) / ((float)tree.agua));
 
 
         colher[0].interactable = tile.com_fruto;
@@ -620,10 +632,26 @@ public class HUD : MonoBehaviour
                 }
                 else 
                 {
-                    card[j, i].GetChild(3).GetChild(0).GetChild(0).GetComponent<Text>().text = aux[i].name;
-                    card[j, i].GetChild(3).GetChild(1).GetChild(0).GetComponent<Text>().text = aux[i].name;
-                    card[j, i].GetChild(3).GetChild(2).GetChild(0).GetComponent<Text>().text = aux[i].name;
-                    card[j, i].GetChild(3).GetChild(3).GetChild(0).GetComponent<Text>().text = aux[i].name;
+
+                    if (aux[i].seed.gosta_sombra) {
+                        card[j, i].GetChild(3).GetChild(0).GetChild(1).GetComponent<Image>().sprite = sols[0];
+                        card[j, i].GetChild(3).GetChild(0).GetChild(0).GetComponent<Text>().text = "Pleno sol e Sombra";
+                    } else {
+                        card[j, i].GetChild(3).GetChild(0).GetChild(1).GetComponent<Image>().sprite = sols[1];
+                        card[j, i].GetChild(3).GetChild(0).GetChild(0).GetComponent<Text>().text = "Pleno sol";
+                    }
+
+                    if (aux[i].seed.agua == 1)
+                        card[j, i].GetChild(3).GetChild(1).GetChild(0).GetComponent<Text>().text = "diario";
+                    else
+                        card[j, i].GetChild(3).GetChild(1).GetChild(0).GetComponent<Text>().text = "a cada " + aux[i].seed.agua + " dias";
+
+
+                    card[j, i].GetChild(3).GetChild(2).GetChild(0).GetComponent<Text>().text = "a cada " + aux[i].seed.tempo_fruto + "s";
+                    card[j, i].GetChild(3).GetChild(3).GetChild(0).GetComponent<Text>().text = "solo " + aux[i].seed.level;
+                    card[j, i].GetChild(3).GetChild(3).GetChild(1).GetComponent<Image>().sprite = solos[aux[i].seed.level];
+
+                    //solos
 
                     card[j, i].GetChild(2).gameObject.SetActive(false);
                     card[j, i].GetChild(3).gameObject.SetActive(true);
@@ -654,4 +682,9 @@ public class HUD : MonoBehaviour
         huds[1].transform.GetChild(1).GetChild(0).GetChild(0).GetChild(1).gameObject.GetComponent<ScrollRect>().verticalNormalizedPosition = 1;
 
     }
+
+    [SerializeField]
+    Sprite[] sols;
+    [SerializeField]
+    Sprite[] solos;
 }

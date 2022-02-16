@@ -23,8 +23,10 @@ MonoBehaviour:
   colheitas: 0
   ganho_colheita: 20
   ganho_polda: 5
+  agua: 1
   _broto: {fileID: 6633212530540223098, guid: ee5b38d87622bed44a5d002c6cb8495e, type: 3}
   _0_jovem: {fileID: 5036860040570232559, guid: deb23abf89639e149bb65e2de23ed2b2, type: 3}
   _1_adulta: {fileID: 3173828889333304916, guid: 10b0067092708234f9af8c0680621639, type: 3}
   _2_colhida: {fileID: 0}
   _3_poldada: {fileID: 0}
+  id: 6

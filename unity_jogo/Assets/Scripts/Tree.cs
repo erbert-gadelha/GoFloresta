@@ -16,6 +16,7 @@ public class Tree : ScriptableObject
     public int colheitas;
     public int ganho_colheita;
     public int ganho_polda;
+    public int agua;
 
     [Header("Stages")]
     public GameObject _broto;
@@ -24,4 +25,8 @@ public class Tree : ScriptableObject
     public GameObject _2_colhida;
     public GameObject _3_poldada;
 
+
+
+    [Header("Editor")]
+    public int id;
 }

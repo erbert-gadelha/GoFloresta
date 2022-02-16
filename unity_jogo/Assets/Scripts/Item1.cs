@@ -74,18 +74,16 @@ class Regador : Item
     public override bool usar(Vector3 pos, int rot)
     {
         Tile tile = Board.board.get(pos);
-
         if (tile == null)
             return false;
 
+        if (tile.parent_ != null)
+            tile = tile.parent_;
 
-        if (!tile.arado)
+        if (tile.tree == null)
             return false;
 
-        //Board.board.change_mat(position, Board.materials.molhado);
-        Debug.LogWarning("mudar material e colocar tempo pra secar");
-
-        tile.molhado = true;
+        tile.nivel_agua = tile.tree.agua;
         return true;
     }
 }

@@ -7,6 +7,7 @@ ScriptsOnlyBuild:
     - HUD
     - Inventory
     - Moviment_2
+    - Persistencia
     - Sound_player
     - Tempo
     - Tile
@@ -29,6 +30,7 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.TileDragAndDropManager
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
     Unity.CollabProxy.Editor.dll:
+    - Unity.Cloud.Collaborate.UserInterface.CollaborateWindow
     - Unity.Cloud.Collaborate.UserInterface.WindowCache
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
@@ -37,18 +39,13 @@ ScriptsOnlyBuild:
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
-    UnityEditor.Graphs.dll:
-    - UnityEditor.Graphs.AnimationBlendTree.Graph
-    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
-    - UnityEditor.Graphs.AnimationStateMachine.Graph
-    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
-    - UnityEditor.Graphs.AnimatorControllerTool
+    - TMPro.TextMeshProUGUI
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
+    UnityEditor.UI.dll:
+    - UnityEditor.UI.ImageEditor
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -56,9 +53,11 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Mask
     - UnityEngine.UI.Outline
     - UnityEngine.UI.RectMask2D
     - UnityEngine.UI.ScrollRect
+    - UnityEngine.UI.Scrollbar
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
   sceneClasses:
@@ -83,7 +82,13 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 49
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -102,19 +107,29 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2626}
     - Class: 114
+      Script: {instanceID: 2668}
+    - Class: 114
       Script: {instanceID: 2798}
     - Class: 114
       Script: {instanceID: 3008}
+    - Class: 114
+      Script: {instanceID: 3016}
     - Class: 114
       Script: {instanceID: 3110}
     - Class: 114
       Script: {instanceID: 3372}
     - Class: 114
-      Script: {instanceID: 4252}
+      Script: {instanceID: 3846}
     - Class: 114
-      Script: {instanceID: 4256}
+      Script: {instanceID: 3980}
     - Class: 114
-      Script: {instanceID: 4582}
+      Script: {instanceID: 4158}
+    - Class: 114
+      Script: {instanceID: 4254}
+    - Class: 114
+      Script: {instanceID: 4258}
+    - Class: 114
+      Script: {instanceID: 4584}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -122,6 +137,10 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -193,6 +212,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3110}
     - Class: 114
+      Script: {instanceID: 3372}
+    - Class: 114
       Script: {instanceID: 3384}
     - Class: 114
       Script: {instanceID: 3444}
@@ -201,13 +222,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3754}
     - Class: 114
-      Script: {instanceID: 4114}
+      Script: {instanceID: 3846}
     - Class: 114
-      Script: {instanceID: 4156}
+      Script: {instanceID: 4116}
     - Class: 114
-      Script: {instanceID: 4214}
+      Script: {instanceID: 4158}
     - Class: 114
-      Script: {instanceID: 4232}
+      Script: {instanceID: 4216}
+    - Class: 114
+      Script: {instanceID: 4234}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -333,7 +356,7 @@ ScriptsOnlyBuild:
     className: TMP_FontAsset
   - hash:
       serializedVersion: 2
-      Hash: 8bec456ba5a3f15244501970e6be11c0
+      Hash: 3831fb1d0f1c2c25af7898811be8445e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Tempo
@@ -651,7 +674,7 @@ ScriptsOnlyBuild:
     className: PositionAsUV1
   - hash:
       serializedVersion: 2
-      Hash: 844fcebed7c44569c5d23fed6c69fe3a
+      Hash: b32ac755d64b8f922bb7e2a31359b3ce
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: HUD
@@ -663,7 +686,7 @@ ScriptsOnlyBuild:
     className: AudioPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 3b638aa833c09c84fce652557840fc48
+      Hash: 40ef9bdf154f250438abaaf48e7ab7d3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Tile
@@ -705,6 +728,12 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
+      Hash: aeab24370599d9caba76bbf3bbb7447a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Persistencia
+  - hash:
+      serializedVersion: 2
       Hash: 0edeba255bdbade25edc357f1412ba38
     assemblyName: Unity.2D.SpriteShape.Runtime.dll
     namespaceName: UnityEngine.U2D
@@ -741,7 +770,7 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
-      Hash: 77b1b00e3dc8781704fcee59d0a6710a
+      Hash: 0c8d01962d9a58115dc3cc63334f56f6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Tree

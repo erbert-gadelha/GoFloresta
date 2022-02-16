@@ -506,9 +506,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &84512979
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,9 +833,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &118120808
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,7 +1087,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 8d732f6dc5cdd1143a99fc22c7362d65, type: 3}
 --- !u!4 &121331093 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8d732f6dc5cdd1143a99fc22c7362d65, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 121331092}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &123270001
@@ -1282,9 +1318,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &188034326
 GameObject:
   m_ObjectHideFlags: 0
@@ -1329,9 +1383,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &198401921
 GameObject:
   m_ObjectHideFlags: 0
@@ -1457,9 +1529,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &203590929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1504,9 +1594,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &207608242
 GameObject:
   m_ObjectHideFlags: 0
@@ -1922,9 +2030,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &311528319
 GameObject:
   m_ObjectHideFlags: 0
@@ -2050,9 +2176,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &320033754
 GameObject:
   m_ObjectHideFlags: 0
@@ -2253,9 +2397,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &341561568
 GameObject:
   m_ObjectHideFlags: 0
@@ -2381,9 +2543,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &357100134
 GameObject:
   m_ObjectHideFlags: 0
@@ -2428,9 +2608,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &361694357
 GameObject:
   m_ObjectHideFlags: 0
@@ -2475,9 +2673,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &367200009
 GameObject:
   m_ObjectHideFlags: 0
@@ -2779,9 +2995,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &399367645
 GameObject:
   m_ObjectHideFlags: 0
@@ -3027,9 +3261,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &415921600
 GameObject:
   m_ObjectHideFlags: 0
@@ -3144,9 +3396,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &444337352
 GameObject:
   m_ObjectHideFlags: 0
@@ -3191,9 +3461,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &463439905
 GameObject:
   m_ObjectHideFlags: 0
@@ -3238,9 +3526,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &480775527
 GameObject:
   m_ObjectHideFlags: 0
@@ -3368,9 +3674,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &491184021
 GameObject:
   m_ObjectHideFlags: 0
@@ -3496,9 +3820,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &491922439
 GameObject:
   m_ObjectHideFlags: 0
@@ -3624,9 +3966,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &498469926
 GameObject:
   m_ObjectHideFlags: 0
@@ -3752,9 +4112,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &508859980
 GameObject:
   m_ObjectHideFlags: 0
@@ -3880,9 +4258,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &564953444
 GameObject:
   m_ObjectHideFlags: 0
@@ -3927,9 +4323,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &589391814
 GameObject:
   m_ObjectHideFlags: 0
@@ -3957,11 +4371,11 @@ Transform:
   m_LocalPosition: {x: 4.813917, y: -0.074762106, z: -1.245264}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1048109408}
-  - {fileID: 842408325}
-  - {fileID: 1181911329}
-  - {fileID: 1033235767}
   - {fileID: 121331093}
+  - {fileID: 842408325}
+  - {fileID: 1033235767}
+  - {fileID: 1048109408}
+  - {fileID: 1181911329}
   - {fileID: 1786372838}
   m_Father: {fileID: 1535607231}
   m_RootOrder: 1
@@ -4010,9 +4424,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &612006958
 GameObject:
   m_ObjectHideFlags: 0
@@ -4259,9 +4691,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &655840150
 GameObject:
   m_ObjectHideFlags: 0
@@ -4387,9 +4837,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &684264065
 GameObject:
   m_ObjectHideFlags: 0
@@ -4434,9 +4902,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &684369304
 GameObject:
   m_ObjectHideFlags: 0
@@ -4481,9 +4967,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &685611044
 GameObject:
   m_ObjectHideFlags: 0
@@ -4528,9 +5032,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &693477537
 GameObject:
   m_ObjectHideFlags: 0
@@ -4950,9 +5472,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1001 &754673403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5152,9 +5692,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &782173995
 GameObject:
   m_ObjectHideFlags: 0
@@ -5282,9 +5840,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &799478513
 GameObject:
   m_ObjectHideFlags: 0
@@ -5610,7 +6186,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 896809239}
-  img: []
   joystick: {fileID: 0}
 --- !u!1001 &842408324
 PrefabInstance:
@@ -5683,7 +6258,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 8d732f6dc5cdd1143a99fc22c7362d65, type: 3}
 --- !u!4 &842408325 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8d732f6dc5cdd1143a99fc22c7362d65, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 842408324}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &848259232
@@ -5730,9 +6305,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &866516428
 GameObject:
   m_ObjectHideFlags: 0
@@ -6167,22 +6760,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d248fef6dbeeeac4f8eb89a1a42c5de7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 1562885725}
-  x: {x: 0, y: 0, z: -1}
-  y: {x: 1, y: 0, z: 0}
+  seed: {fileID: 0}
+  controle: 0
   initial: {x: 0, y: 0, z: 0}
   offset: {x: 4, y: 0, z: 4}
+  anim: {fileID: 1562885725}
   vel: 0.06
-  input: {x: -1, y: 1}
-  tag: {fileID: 1061986879}
-  pos: {fileID: 1225113786}
-  boneco: {fileID: 0}
-  controle: 0
-  arado: {fileID: 8472660251568846378, guid: 8d2895ec24e6c464b844b3e21285d512, type: 3}
   rot_vel: 5
   cam_rotate: 0
   rot: 0
-  sedd: {fileID: 11400000, guid: 0d023886be0931f428b9be5bddb50805, type: 2}
+  target: {fileID: 0}
+  boneco: {fileID: 0}
+  cam: {fileID: 0}
 --- !u!4 &896809240
 Transform:
   m_ObjectHideFlags: 0
@@ -6405,9 +6994,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &920595654
 GameObject:
   m_ObjectHideFlags: 0
@@ -6717,9 +7324,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &965236874
 GameObject:
   m_ObjectHideFlags: 0
@@ -6855,7 +7480,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 896809239}
-  img: []
   joystick: {fileID: 0}
 --- !u!1 &966920483
 GameObject:
@@ -6901,9 +7525,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &975336801
 GameObject:
   m_ObjectHideFlags: 0
@@ -7110,9 +7752,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &989794008
 GameObject:
   m_ObjectHideFlags: 0
@@ -7238,9 +7898,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1011058052
 GameObject:
   m_ObjectHideFlags: 0
@@ -7366,9 +8044,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1030763445
 GameObject:
   m_ObjectHideFlags: 0
@@ -7616,7 +8312,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 8d732f6dc5cdd1143a99fc22c7362d65, type: 3}
 --- !u!4 &1033235767 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8d732f6dc5cdd1143a99fc22c7362d65, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1033235766}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1048109407
@@ -7690,7 +8386,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 8d732f6dc5cdd1143a99fc22c7362d65, type: 3}
 --- !u!4 &1048109408 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8d732f6dc5cdd1143a99fc22c7362d65, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1048109407}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1050889934
@@ -7930,9 +8626,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1088485036
 GameObject:
   m_ObjectHideFlags: 0
@@ -8058,9 +8772,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1122809391
 GameObject:
   m_ObjectHideFlags: 0
@@ -8872,7 +9604,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 8d732f6dc5cdd1143a99fc22c7362d65, type: 3}
 --- !u!4 &1181911329 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8d732f6dc5cdd1143a99fc22c7362d65, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1181911328}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1194073304
@@ -8919,9 +9651,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1209717608
 GameObject:
   m_ObjectHideFlags: 0
@@ -8966,9 +9716,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1212782246
 GameObject:
   m_ObjectHideFlags: 0
@@ -9175,9 +9943,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1221861429
 GameObject:
   m_ObjectHideFlags: 0
@@ -9222,9 +10008,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1224353610
 GameObject:
   m_ObjectHideFlags: 0
@@ -9269,9 +10073,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1225113785
 GameObject:
   m_ObjectHideFlags: 0
@@ -9347,9 +10169,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1230278510
 GameObject:
   m_ObjectHideFlags: 0
@@ -9433,9 +10273,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1276842652
 GameObject:
   m_ObjectHideFlags: 0
@@ -9480,9 +10338,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1312925292
 GameObject:
   m_ObjectHideFlags: 0
@@ -9689,9 +10565,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1352322155
 GameObject:
   m_ObjectHideFlags: 0
@@ -9831,9 +10725,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1369682468
 GameObject:
   m_ObjectHideFlags: 0
@@ -10040,9 +10952,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1389431548
 GameObject:
   m_ObjectHideFlags: 0
@@ -10087,9 +11017,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1394089081
 GameObject:
   m_ObjectHideFlags: 0
@@ -10215,9 +11163,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1412386043
 GameObject:
   m_ObjectHideFlags: 0
@@ -10706,9 +11672,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1535607230
 GameObject:
   m_ObjectHideFlags: 0
@@ -10785,9 +11769,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1557977188
 GameObject:
   m_ObjectHideFlags: 0
@@ -10869,9 +11871,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1560812915
 GameObject:
   m_ObjectHideFlags: 0
@@ -11102,9 +12122,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1580894826
 GameObject:
   m_ObjectHideFlags: 0
@@ -11149,9 +12187,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1581792616
 GameObject:
   m_ObjectHideFlags: 0
@@ -11478,9 +12534,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1596803796
 GameObject:
   m_ObjectHideFlags: 0
@@ -11525,9 +12599,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1598062275
 GameObject:
   m_ObjectHideFlags: 0
@@ -11572,9 +12664,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1612866238
 GameObject:
   m_ObjectHideFlags: 0
@@ -12709,9 +13819,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1758894403
 GameObject:
   m_ObjectHideFlags: 0
@@ -13107,7 +14235,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 8d732f6dc5cdd1143a99fc22c7362d65, type: 3}
 --- !u!4 &1786372838 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8d732f6dc5cdd1143a99fc22c7362d65, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1786372837}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1793019986
@@ -13154,9 +14282,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1797565699
 GameObject:
   m_ObjectHideFlags: 0
@@ -13292,7 +14438,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 896809239}
-  img: []
   joystick: {fileID: 0}
 --- !u!1 &1797950605
 GameObject:
@@ -13451,9 +14596,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1842800673
 GameObject:
   m_ObjectHideFlags: 0
@@ -13741,9 +14904,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1874226443
 GameObject:
   m_ObjectHideFlags: 0
@@ -13869,9 +15050,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1902711389
 GameObject:
   m_ObjectHideFlags: 0
@@ -13997,9 +15196,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1909548379
 GameObject:
   m_ObjectHideFlags: 0
@@ -14044,9 +15261,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1918798780
 GameObject:
   m_ObjectHideFlags: 0
@@ -14128,9 +15363,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1922184484
 GameObject:
   m_ObjectHideFlags: 0
@@ -14266,7 +15519,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 896809239}
-  img: []
   joystick: {fileID: 0}
 --- !u!1 &1922933001
 GameObject:
@@ -14526,9 +15778,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1943399466
 GameObject:
   m_ObjectHideFlags: 0
@@ -14816,9 +16086,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &1988583835
 GameObject:
   m_ObjectHideFlags: 0
@@ -14863,9 +16151,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &2011835675
 GameObject:
   m_ObjectHideFlags: 0
@@ -15072,9 +16378,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &2045108199
 GameObject:
   m_ObjectHideFlags: 0
@@ -15200,9 +16524,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &2067503636
 GameObject:
   m_ObjectHideFlags: 0
@@ -15328,9 +16670,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &2081078387
 GameObject:
   m_ObjectHideFlags: 0
@@ -15456,9 +16816,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &2099211849
 GameObject:
   m_ObjectHideFlags: 0
@@ -15503,9 +16881,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &2111112063
 GameObject:
   m_ObjectHideFlags: 0
@@ -15631,9 +17027,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &2127205320
 GameObject:
   m_ObjectHideFlags: 0
@@ -15678,9 +17092,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &2129859844
 GameObject:
   m_ObjectHideFlags: 0
@@ -15806,9 +17238,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9027fc92e348121409927d7c49630e09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ph: 0
+  tipo: 0
+  rotation: 0
   tree: {fileID: 0}
-  pos: {x: 0, y: 0}
+  colision: 0
+  plantable: 0
+  molhado: 0
+  mesh: {fileID: 0}
+  current_state: 0
+  position: {x: 0, y: 0}
+  current_age: 0
+  obj: {fileID: 0}
+  parent_: {fileID: 0}
+  center: {x: 0, y: 0, z: 0}
+  colheitas: 0
+  current_level: 0
+  target_age: 0
+  childs: []
+  na_sombra: 0
+  com_fruto: 0
+  crescendo: 0
+  arado: {fileID: 0}
 --- !u!1 &2141067199
 GameObject:
   m_ObjectHideFlags: 0

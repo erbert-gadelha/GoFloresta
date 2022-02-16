@@ -12,7 +12,7 @@ public class Tempo : MonoBehaviour
     bool running = false;
     public static Tempo tempo;
     [SerializeField]
-    List<Tile> plantas;
+    public List<Tile> plantas;
 
     [SerializeField]
     public int hora = 8, mnt = 0;
@@ -62,8 +62,11 @@ public class Tempo : MonoBehaviour
     public void SetTo(int to)
     {
         hora = to;
-        hr.eulerAngles = new Vector3(0, 0, -(hora * 720) / 24);
+        hr0.eulerAngles = new Vector3(0, 0, -(hora * 720) / 24);
+        hr1.eulerAngles = new Vector3(0, 0, -(hora * 720) / 24);
 
+
+        noite = (to<=4)|(to>20);
 
         if ((to > 4) & (to <= 8))
         {         //MANHA
@@ -71,6 +74,15 @@ public class Tempo : MonoBehaviour
             StopCoroutine(_transicao_);
             _transicao_ = _color_to(cores[0]);
             StartCoroutine(_transicao_);
+
+            if (plantas.Count > 0)
+            {
+                for (int i = 0; i < plantas.Count; i++)
+                    plantas[i].secar();
+
+                print("alo mocada1");
+            }
+
         }
         else if ((to >= 15) & (to <= 20))
         {  //TARDE
@@ -107,6 +119,15 @@ public class Tempo : MonoBehaviour
                 _transicao_ = _color_to(cores[0]);
                 StartCoroutine(_transicao_);
                 noite = false;
+
+
+                if (plantas.Count > 0)
+                {
+                    for (int i = 0; i < plantas.Count; i++)
+                        plantas[i].secar();
+
+                    print("alo mocada2");
+                }
                 break;
             case 18:
                 obj.SetTrigger("tarde");
@@ -209,7 +230,9 @@ public class Tempo : MonoBehaviour
 
 
     [SerializeField]
-    RectTransform hr, mn;
+    RectTransform hr0, mn0;
+    [SerializeField]
+    RectTransform hr1, mn1;
     IEnumerator _clock() {
 
         while (true)
@@ -224,14 +247,16 @@ public class Tempo : MonoBehaviour
                 if (hora >= 24)
                     hora = 0;
 
-                hr.eulerAngles = new Vector3(0, 0, -(hora * 720) / 24);
+                hr0.eulerAngles = new Vector3(0, 0, -(hora * 720) / 24);
+                hr1.eulerAngles = new Vector3(0, 0, -(hora * 720) / 24);
                 Sound_player.player.play(2);
 
                 Skip();
                 Refresh();
             }
 
-            mn.eulerAngles = new Vector3(0, 0, -(mnt * 360) / 12);
+            mn0.eulerAngles = new Vector3(0, 0, -(mnt * 360) / 12);
+            mn1.eulerAngles = new Vector3(0, 0, -(mnt * 360) / 12);
             yield return new WaitForSeconds(delay);
         }
 

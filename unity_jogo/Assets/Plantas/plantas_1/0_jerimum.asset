@@ -16,15 +16,17 @@ MonoBehaviour:
   icon: {fileID: 2406239511609747532, guid: a3444b66731c4ac4c8db610d6e774fd2, type: 3}
   age: 1
   level: 2
-  gosta_sombra: 0
+  gosta_sombra: 1
   size: {x: 1, y: 1}
   tempo_crescer: 10
   tempo_fruto: 0
   colheitas: 1
   ganho_colheita: 8
   ganho_polda: 0
+  agua: 1
   _broto: {fileID: 6633212530540223098, guid: ee5b38d87622bed44a5d002c6cb8495e, type: 3}
   _0_jovem: {fileID: 8368981817611820297, guid: e27c6e8d44361a94eb90e458c360be89, type: 3}
   _1_adulta: {fileID: 1193604914811408388, guid: f6df1cb9b95255b43af03a8c57e1c207, type: 3}
   _2_colhida: {fileID: 2946878113418156796, guid: 3820f4fa3b88887488bfbb3e2cfa4cb9, type: 3}
   _3_poldada: {fileID: 0}
+  id: 2

@@ -65,6 +65,8 @@ public class Tile : MonoBehaviour
 
     //  0-crescendo | 1-dando_fruto  | 2-poldada | 3-parada
     public int crescendo;
+    public int nivel_agua = 0;
+
 
     public void grow(bool dia) {
         if (!tree.gosta_sombra)
@@ -80,7 +82,7 @@ public class Tile : MonoBehaviour
             return;
         }
 
-        if (current_state < 0)
+        if (current_state < 0 | nivel_agua <= 0)
             return;
 
         int temp;
@@ -125,11 +127,18 @@ public class Tile : MonoBehaviour
                 }
 
                 break;
+            case 3: break;
         }
 
     }
 
+    public void secar()
+    {
+        if (nivel_agua <= 0)
+            return;
 
+        nivel_agua--;
+    }
 
     public void Refresh()
     {
@@ -140,6 +149,7 @@ public class Tile : MonoBehaviour
         {
             GameObject aux = null;
             bool colisao = false;
+
 
             switch (current_state)
             {
@@ -156,7 +166,7 @@ public class Tile : MonoBehaviour
                     current_state = 2;
 
                     com_fruto = true;
-                    Tempo.tempo.Remove(this);
+                    //Tempo.tempo.Remove(this);
 
                     current_level = tree.level + 1;
                     if (current_level >= 2) current_level = 2;
@@ -178,12 +188,12 @@ public class Tile : MonoBehaviour
 
                     colheitas++;
                     if (colheitas >= tree.colheitas) {
-                        Debug.Log("nomore colheiras");
-                        Tempo.tempo.Remove(this);
+                        //Debug.Log("nomore colheiras");
+                        //Tempo.tempo.Remove(this);
                         crescendo = 3;
                     } else {
-                        Tempo.tempo.Remove(this);
-                        Tempo.tempo.Add(this);
+                        //Tempo.tempo.Remove(this);
+                        //Tempo.tempo.Add(this);
                         target_age = tree.tempo_fruto;
                         current_age = 0;
                         crescendo = 1;
@@ -202,8 +212,8 @@ public class Tile : MonoBehaviour
                     }
                     else
                     {
-                        Tempo.tempo.Remove(this);
-                        Tempo.tempo.Add(this);
+                        //Tempo.tempo.Remove(this);
+                        //Tempo.tempo.Add(this);
                         target_age = tree.tempo_fruto;
                         current_age = 0;
                         crescendo = 1;
@@ -219,11 +229,12 @@ public class Tile : MonoBehaviour
 
             colision = colisao;
             plantable = false;
-            for (int i = 0; i < childs.Length; i++)
-            {
-                childs[i].colision = colisao;
-                childs[i].plantable = false;
-            }
+            if(childs.Length>0)
+                for (int i = 0; i < childs.Length; i++)
+                {
+                    childs[i].colision = colisao;
+                    childs[i].plantable = false;
+                }
 
             if (aux != null)
             {

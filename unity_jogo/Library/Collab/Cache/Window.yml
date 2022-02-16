@@ -14,38 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
-    - Assets/Models/Mundo.mtl
-    - Assets/Models/Mundo.mtl.meta
-    - Assets/Models/Mundo.obj
-    - Assets/Models/Mundo.obj.meta
-    - Assets/Models/Mundo.png
-    - Assets/Models/Mundo.png.meta
-    - Assets/Models/models_2/arado.mtl
-    - Assets/Models/models_2/arado.mtl.meta
-    - Assets/Models/models_2/arado.obj
-    - Assets/Models/models_2/arado.obj.meta
-    - Assets/Models/models_2/arado.png
-    - Assets/Models/models_2/arado.png.meta
-    - Assets/Models/terreno.mtl
-    - Assets/Models/terreno.mtl.meta
-    - Assets/Models/terreno.obj
-    - Assets/Models/terreno.obj.meta
-    - Assets/Models/terreno.png
-    - Assets/Models/terreno.png.meta
-    - Assets/Prefs/Tiles/eric_terrenos/arado.prefab
-    - Assets/Prefs/Tiles/eric_terrenos/arado.prefab.meta
     - Assets/Prefs/pacote.prefab
-    - Assets/Scenes/1_fase_1.unity
     - Assets/Scripts/Board.cs
     - Assets/Scripts/HUD.cs
-    - Assets/Scripts/Inventory.cs
     - Assets/Scripts/Item1.cs
-    - Assets/Scripts/Sound_player.cs
+    - Assets/Scripts/Persistencia.cs
+    - Assets/Scripts/Tempo.cs
     - Assets/Scripts/Tile.cs
-    - Assets/Sounds/7_tick.wav
-    - Assets/Sounds/7_tick.wav.meta
     - 
-    m_Values: 00000000000000000000000000000000000000000000000000000000000000
+    m_Values: 0000000000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 
