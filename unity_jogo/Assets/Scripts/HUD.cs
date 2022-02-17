@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class HUD : MonoBehaviour
 {
@@ -27,8 +28,8 @@ public class HUD : MonoBehaviour
 
     int open_in = -1;
 
-
-
+    [SerializeField]
+    TextMeshProUGUI[] desc;
 
 
 
@@ -81,6 +82,7 @@ public class HUD : MonoBehaviour
         images[0] = new Image[15];
         images[1] = new Image[15];
 
+        desc = new TextMeshProUGUI[2];
         _status = new RectTransform[2];
         sliders = new Slider[2];
         colher = new Button[2];
@@ -101,7 +103,10 @@ public class HUD : MonoBehaviour
             //EQUIPADO - MENU
             images[i][img++] = huds[i].GetChild(1).GetChild(0).GetChild(1).GetChild(0).GetChild(0).GetComponent<Image>();
              texts[i][txt++] = huds[i].GetChild(1).GetChild(0).GetChild(1).GetChild(1).GetChild(0).GetComponent<Text>();
-             texts[i][txt++] = huds[i].GetChild(1).GetChild(0).GetChild(1).GetChild(1).GetChild(1).GetComponent<Text>();
+
+             desc[i] = huds[i].GetChild(1).GetChild(0).GetChild(1).GetChild(1).GetChild(1).GetComponent<TextMeshProUGUI>();
+             texts[i][txt++] = null;
+
 
             images[i][img++] = huds[i].GetChild(0).GetChild(4).GetChild(1).GetChild(0).GetComponent<Image>();
             images[i][img++] = huds[i].GetChild(0).GetChild(4).GetChild(1).GetChild(1).GetComponent<Image>();
@@ -521,8 +526,9 @@ public class HUD : MonoBehaviour
 
                  texts[i][1].enabled = false;
                  texts[i][2].enabled = false;
-                 texts[i][3].enabled = false;
-                 texts[i][4].enabled = false;
+                desc[i].gameObject.SetActive(false);
+                //texts[i][3].enabled = false;
+                texts[i][4].enabled = false;
 
                 huds[i].GetChild(1).GetChild(0).GetChild(1).GetChild(2).gameObject.SetActive(false);
             }
@@ -563,8 +569,12 @@ public class HUD : MonoBehaviour
                 images[i][1].enabled = true;
                 images[i][2].enabled = true;
 
-                texts[i][3].text = item.description;
-                texts[i][3].enabled = true;
+
+                desc[i].text = item.description;
+                desc[i].gameObject.SetActive(true);
+
+                //texts[i][3].text = item.description;
+                //texts[i][3].enabled = true;
 
 
                 huds[i].GetChild(1).GetChild(0).GetChild(1).GetChild(2).gameObject.SetActive(false);
@@ -582,8 +592,10 @@ public class HUD : MonoBehaviour
                  texts[i][4].enabled = true;
                 texts[i][4].text = ("x"+Inventory.inventory.bolso[opened_item.x, opened_item.y]);
 
-                texts[i][3].text = item.description;
-                texts[i][3].enabled = true;
+                desc[i].text = item.description;
+                desc[i].gameObject.SetActive(true);
+                //texts[i][3].text = item.description;
+                //texts[i][3].enabled = true;
 
                 texts[i][10].text = item.value.ToString();
                 texts[i][13].text = "x" + Inventory.inventory.bolso[opened_item.x, opened_item.y];
