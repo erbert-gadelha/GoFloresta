@@ -14,7 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SimpleSelectedItems:
     m_Keys:
+    - Assets/Plantas/plantas_1/0_feijao.asset
+    - Assets/Plantas/plantas_1/0_jerimum.asset
+    - Assets/Plantas/plantas_1/0_milho.asset
+    - Assets/Plantas/plantas_1/1_caju.asset
+    - Assets/Plantas/plantas_1/1_pitombeira.asset
+    - Assets/Plantas/plantas_1/2_acerola.asset
+    - Assets/Plantas/plantas_1/2_graviola.asset
+    - Assets/Plantas/plantas_1/2_mamao.asset
     - Assets/Prefs/pacote.prefab
+    - Assets/Scenes/1_fase_1.unity
     - Assets/Scripts/Board.cs
     - Assets/Scripts/HUD.cs
     - Assets/Scripts/Item1.cs
@@ -22,7 +31,7 @@ MonoBehaviour:
     - Assets/Scripts/Tempo.cs
     - Assets/Scripts/Tile.cs
     - 
-    m_Values: 0000000000000000
+    m_Values: 0000000000000000000000000000000000
   RevisionSummary: 
   ChangesSearchValue: 
   SelectedHistoryRevision: 

@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: 2_1
   m_EditorClassIdentifier: 
   icon: {fileID: 4246112705632052572, guid: a3444b66731c4ac4c8db610d6e774fd2, type: 3}
-  name: Bananeira
-  description: "~sem descri\xE7\xE3o~"
+  name: Banana
+  description: "<b>Nome Popular:</b> Bananeiras\r\n<b>Nome Cient\xEDfico:</b> <i>Musa
+    sp.</i>\r\nUma esp\xE9cie Herb\xE1cea nativa da \xC1sia, \xE9 fonte de vitaminas
+    A, complexo B, C, \xE1cido f\xF3lico, carboidratos, pot\xE1ssio, c\xE1lcio, fibras
+    e magn\xE9sio.\r\n<b>Rende 20 sementes</b>"
   id: 0
   qntd: 0
   value: 7

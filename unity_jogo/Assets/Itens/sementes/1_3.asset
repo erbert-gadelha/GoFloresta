@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: -1521192242703698820, guid: a3444b66731c4ac4c8db610d6e774fd2, type: 3}
   name: Pitanga
-  description: "~sem descri\xE7\xE3o~"
+  description: "<b>Nome Popular:</b> Pitanga\r\n<b>Nome Cient\xEDfico:</b> <i>Eugenia
+    uniflora</i>\r\nUma esp\xE9cie Arb\xF3rea nativa do Brasil, \xE9 fonte de vitaminas
+    A, C e complexo B, al\xE9m de f\xF3sforo e c\xE1lcio.\r\n<b>Rende 30 sementes</b>"
   id: 0
   qntd: 0
   value: 10

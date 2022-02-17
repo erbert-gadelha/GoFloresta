@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 619426846574319872, guid: a3444b66731c4ac4c8db610d6e774fd2, type: 3}
   name: "Caj\xE1"
-  description: "~sem descri\xE7\xE3o~"
+  description: "<b>Nome Popular:</b> Caj\xE1\r\n<b>Nome Cient\xEDfico:</b> <i>Spondias
+    mombin</i>\r\nUma esp\xE9cie Arb\xF3rea nativa do Brasil, \xE9 fonte de vitaminas
+    A, B e C, al\xE9m de fibras.\r\n<b>Rende 30 sementes</b>"
   id: 0
   qntd: 0
   value: 10

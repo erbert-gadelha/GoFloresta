@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 2406239511609747532, guid: a3444b66731c4ac4c8db610d6e774fd2, type: 3}
   name: Jerimum
-  description: "~sem descri\xE7\xE3o~"
+  description: "<b>Nome Popular:</b> Jerimum ou Ab\xF3bora\r\n<b>Nome Cient\xEDfico:</b>
+    <i>Cucurbita moschata</i>\r\nUma esp\xE9cie Herb\xE1cea rasteira nativa do M\xE9xico,
+    \xE9 uma fonte de vitaminas C e E, al\xE9m de pot\xE1ssio, \xE1cido f\xF3lico
+    e betacaroteno.\r\n<b>Rende 8 sementes</b>"
   id: 0
   qntd: 0
   value: 3

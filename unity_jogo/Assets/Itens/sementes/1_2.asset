@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: 1_2
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 66e6fa2f94f3f9a48a4c990298fb339e, type: 3}
-  name: "Ip\xEA Roxo"
-  description: "~sem descri\xE7\xE3o~"
+  name: "Ip\xEA-roxo"
+  description: "<b>Nome Popular:</b> Ip\xEA-roxo\r\n<b>Nome Cient\xEDfico:</b> <i>Handroanthus
+    impetiginosus</i>\r\nUma esp\xE9cie Arb\xF3rea nativa do Brasil.\r\n<b>Rende
+    20 sementes</b>"
   id: 0
   qntd: 0
   value: 7

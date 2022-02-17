@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: -40950111000723213, guid: a3444b66731c4ac4c8db610d6e774fd2, type: 3}
   name: Coco
-  description: "~sem descri\xE7\xE3o~"
+  description: "<b>Nome Popular:</b> Coco\r\n<b>Nome Cient\xEDfico:</b> <i>Cocos
+    nucifera</i>\r\nUma esp\xE9cie Arb\xF3rea nativa da \xC1sia, \xE9 fonte de vitaminas
+    A, B, C e E, al\xE9m de sais minerais, como c\xE1lcio, magn\xE9sio, zinco, ferro,
+    sel\xEAnio, mangan\xEAs, f\xF3sforo e pot\xE1ssio e antioxidantes.\r\n<b>Rende
+    25 sementes</b>\r\n"
   id: 0
   qntd: 0
   value: 15

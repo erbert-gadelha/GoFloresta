@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: 0_1
   m_EditorClassIdentifier: 
   icon: {fileID: -6527456407965906944, guid: a3444b66731c4ac4c8db610d6e774fd2, type: 3}
-  name: "Feij\xE3o de Poco"
-  description: "~sem descri\xE7\xE3o~"
+  name: "Feij\xE3o-de-porco"
+  description: "<b>Nome Popular:</b> Feij\xE3o-de-porco ou Fava-brava\r\n<b>Nome
+    Cient\xEDfico:</b> <i>Canavalia ensiformis</i>\r\nUma esp\xE9cie Herb\xE1cea
+    nativa da Am\xE9rica Central, \xE9 fonte de prote\xEDnas e minerais como ferro,
+    f\xF3sforo, c\xE1lcio e pot\xE1ssio.\r\n<b>Rende 4 sementes</b>"
   id: 0
   qntd: 0
   value: 1

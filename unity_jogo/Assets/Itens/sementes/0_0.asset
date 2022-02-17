@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: -5985375666622007917, guid: a3444b66731c4ac4c8db610d6e774fd2, type: 3}
   name: Abacaxi
-  description: "~sem descri\xE7\xE3o~"
+  description: "<b>Nome Popular:</b> Abacaxi \r\n<b>Nome Cient\xEDfico:</b> <i>Ananas
+    comosus</i>\r\nUma esp\xE9cie Brom\xE9lia nativa da America do Sul, \xE9 fonte
+    de vitaminas A e B1, al\xE9m de pot\xE1ssio e c\xE1lcio.\r\n<b>Rende 8 sementes</b>\r\n"
   id: 0
   qntd: 0
   value: 3

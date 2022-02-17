@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: -2611478236738180621, guid: a3444b66731c4ac4c8db610d6e774fd2, type: 3}
   name: Acerola
-  description: "~sem descri\xE7\xE3o~"
+  description: "<b>Nome Popular:</b> Acerola\r\n<b>Nome Cient\xEDfico:</b> <i>Malpighia
+    glabra</i>\r\nUma esp\xE9cie Arb\xF3rea nativa da Am\xE9rica Central, \xE9 fonte
+    de vitamina C, ferro, c\xE1lcio, fl\xFAor e prote\xEDnas.\r\n<b>Rende 20 sementes</b>"
   id: 0
   qntd: 0
   value: 7
