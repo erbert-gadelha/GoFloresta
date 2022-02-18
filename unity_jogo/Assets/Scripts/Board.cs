@@ -85,6 +85,8 @@ public class Board : MonoBehaviour
         if (!aux.arado | aux.obj != null)
             return false;
 
+        Inventory.inventory.bolso[HUD.hud.opened_item.x, HUD.hud.opened_item.y]--;
+
         int size = tree.size.x * tree.size.y;
         if (size > 1) {
             aux.childs = new Tile[4];
@@ -391,7 +393,7 @@ public class Board : MonoBehaviour
     }
 
 
-    public void plant_at(Tree tree, Vector2 pos_, int rot, int c_age, int t_age, int c_stt, int colheitas)
+    public void plant_at(Tree tree, Vector3 pos_, int rot, int c_age, int t_age, int c_stt, int colheitas, int agua)
     {
         Tile[] childs;
         Tile aux;
@@ -401,22 +403,27 @@ public class Board : MonoBehaviour
         {
             childs = new Tile[4];
 
-            childs[0] = get((int)(pos_.x + 0.5f), (int)(pos_.y + 0.5f));
-            childs[1] = get((int)(pos_.x - 0.5f), (int)(pos_.y + 0.5f));
-            childs[2] = get((int)(pos_.x - 0.5f), (int)(pos_.y - 0.5f));
-            childs[3] = get((int)(pos_.x + 0.5f), (int)(pos_.y - 0.5f));
+            childs[0] = get((int)(pos_.x + 0.5f), (int)(pos_.z + 0.5f));
+            childs[1] = get((int)(pos_.x - 0.5f), (int)(pos_.z + 0.5f));
+            childs[2] = get((int)(pos_.x - 0.5f), (int)(pos_.z - 0.5f));
+            childs[3] = get((int)(pos_.x + 0.5f), (int)(pos_.z - 0.5f));
 
             childs[1].parent_ = childs[0];
             childs[2].parent_ = childs[0];
             childs[3].parent_ = childs[0];
             aux = childs[0];
-            aux.center = new Vector3(pos_.x, 0, pos_.y);
+
+            aux.center = pos_;
         }
         else
         {
             childs = new Tile[0];
-            aux = get((int)pos_.x, (int)pos_.y);
-            aux.center = new Vector3(pos_.x, 0, pos_.y);
+
+            print(new Vector3(pos_.x, 0, pos_.z));
+            print(new Vector3((int)pos_.x, 0, (int)pos_.z));
+
+            aux = get(pos_);
+            aux.center = pos_;
         }
 
         aux.parent_ = null;
@@ -427,6 +434,7 @@ public class Board : MonoBehaviour
         aux.current_state = c_stt;
         aux.colheitas = colheitas;
         aux.tree = tree;
+        aux.nivel_agua = agua;
 
         aux.Refresh();
         Tempo.tempo.Add(aux);

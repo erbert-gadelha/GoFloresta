@@ -73,8 +73,8 @@ public class Persistencia : MonoBehaviour
             for (int i = 0; i < Tempo.tempo.plantas.Count; i++)
             {
                 Tile planta = Tempo.tempo.plantas[i];
-                //                |          id          |          pos          |          rot          |        current_age       |        target_age       |        current_state       |        colheitas       |_  
-                dados.plantas +=       planta.tree.id + "|" + planta.position + "|" + planta.rotation + "|" + planta.current_age + "|" + planta.target_age + "|" + planta.current_state + "|" + planta.colheitas + "|_";
+                //                |          id          |         pos         |          rot          |        current_age       |        target_age       |        current_state       |        colheitas       |          agua           |_  
+                dados.plantas +=       planta.tree.id + "|" + planta.center + "|" + planta.rotation + "|" + planta.current_age + "|" + planta.target_age + "|" + planta.current_state + "|" + planta.colheitas + "|" + planta.nivel_agua + "|_";
             }
         }   
 
@@ -149,27 +149,34 @@ public class Persistencia : MonoBehaviour
                 int idx = int.Parse(planta[0]);
 
                 Tree tree = trees[ idx ];
-                Vector2 pos = stringToVector2(planta[1]);
+                Vector3 pos = stringToVector3(planta[1]);
                 int rot = int.Parse(planta[2]);
                 int c_age = int.Parse(planta[3]);
                 int t_age = int.Parse(planta[4]);
                 int c_stt = int.Parse(planta[5]);
                 int clht = int.Parse(planta[6]);
+                int agua = int.Parse(planta[6]);
 
-                Board.board.plant_at(tree, pos, rot, c_age, t_age, c_stt, clht);
+                Board.board.plant_at(tree, pos, rot, c_age, t_age, c_stt, clht, agua);
             }
         }
 
 
 
-        Vector2 stringToVector2(string rString)
+        Vector3 stringToVector3(string rString)
         {
-            string[] temp = rString.Substring(1, rString.Length - 2).Split(',');
+            //print(rString);
+            string[] temp = rString.Substring(1, rString.Length - 2).Split(','), aux;
 
-            float x = System.Convert.ToSingle(temp[0]);
-            float y = System.Convert.ToSingle(temp[1]);
+            aux = temp[0].Split('.');
+            float x = int.Parse(aux[0]) + (int.Parse(aux[1])/10);
+            //float x = System.Convert.ToSingle(temp[0]);
+            aux = temp[2].Split('.');
+            float z = int.Parse(aux[0]) + (int.Parse(aux[1]) / 10);
+            //float z = System.Convert.ToSingle(temp[1]);
 
-            Vector2 value = new Vector2(x, y);
+            //print(x+":"+z);
+            Vector3 value = new Vector3(x, 0, z);
             return value;
         }
 

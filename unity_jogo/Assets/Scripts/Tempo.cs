@@ -39,6 +39,7 @@ public class Tempo : MonoBehaviour
         tempo = this;
         plantas = new List<Tile>();
 
+        Invoke("polinizar", Random.Range(5, 10));
         Running(true);
     }
 
@@ -173,61 +174,111 @@ public class Tempo : MonoBehaviour
 
     public float vel_polinsz = 0.1f;
 
+    void polinizar()
+    {
+        print("no invoke");
+
+        if (plantas.Count > 0)
+        {
+            int randon = Random.Range(0, plantas.Count - 1);
+            StartCoroutine(_polinizador( plantas[randon].position));
+        }
+        else
+        {
+
+            Invoke("polinizar", Random.Range(5, 10));
+            print("no invoke:sem planta");
+        }
+    }
+
     IEnumerator _polinizador(Vector2Int pos) {
-        GameObject aux = polinizadores[0];
+        if (noite)
+        {
+            Invoke("polinizar", Random.Range(5, 20));
+            print("no invoke:noite");
+            yield break;
+        }
+
+        // pitanga_7, cajá_4, acerola_9, coco_11, caju_5
+        int aux;
+        Tile tile = Board.board.get(pos.x, pos.y);
+        switch (tile.tree.id)
+        {
+            case 4:     aux = 0; break;
+            case 5:     aux = 0; break;
+            case 7:     aux = 0; break;
+            case 9:     aux = 0; break;
+            case 11:    aux = 0; break;
+            case 12:    aux = 1; break;
+            default:    aux = -1; break;
+        }
+
+        if (aux < 0)
+        {
+            Invoke("polinizar", Random.Range(5, 20));
+            print("no invoke:sem polinizador");
+            yield break;
+        }
+
+
+
+        GameObject gO = polinizadores[aux];
 
         Vector2 rdm2 = Random.insideUnitCircle * 5;
         Vector3 rdm3 = new Vector3(rdm2.x, 0, rdm2.y);
 
-        aux = Instantiate(aux, rdm3, Quaternion.identity);
-        ParticleSystem particle = aux.transform.GetChild(0).GetComponent<ParticleSystem>();
+        gO = Instantiate(gO, rdm3, Quaternion.identity);
+        ParticleSystem particle = gO.transform.GetChild(0).GetComponent<ParticleSystem>();
         particle.Play();
 
 
         Vector3 _pos = new Vector3(pos.x, 0, pos.y);
-        aux.transform.LookAt(_pos);
+        gO.transform.LookAt(_pos);
 
-        //aux.transform.localEulerAngles = new Vector3(0, Mathf.Atan2(_pos.x - rdm3.x, _pos.z - rdm3.z) * -Mathf.Rad2Deg, 0);
 
-        while (aux.transform.position != _pos) {
-            aux.transform.position = Vector3.MoveTowards(aux.transform.position, _pos, vel_polinsz);
+        while (gO.transform.position != _pos) {
+            gO.transform.position = Vector3.MoveTowards(gO.transform.position, _pos, vel_polinsz);
             yield return new WaitForFixedUpdate();
         }
-
         yield return new WaitForSeconds(0.45f);
+
+
+        //Tile tile = Board.board.get(pos.x, pos.y);
+        //if (tile.parent_ != null)
+         //   tile = tile.parent_;
+
+        if (tile != null)
+        {
+            Invoke("polinizar", Random.Range(20, 40));
+            for (int i = 0; i < 10; i++)
+                tile.grow(true);
+        }
+        else
+        {
+            Invoke("polinizar", Random.Range(5, 10));
+            print("no invoke:nulo");
+        }
+
         Debug.Log("Coisar a planta");
-        particle.Stop();
+        Destroy(particle);
 
 
         rdm2 = Random.insideUnitCircle * 5;
         rdm3 = new Vector3(rdm2.x, 0, rdm2.y);
-
-        aux.transform.LookAt(rdm3);
-        //aux.transform.localEulerAngles = new Vector3(0, Mathf.Atan2(_pos.x - rdm3.x, _pos.z - rdm3.z) * -Mathf.Rad2Deg, 0);
+        gO.transform.LookAt(rdm3);
 
 
-        while (aux.transform.position != rdm3) {
-            aux.transform.position = Vector3.MoveTowards(aux.transform.position, rdm3, vel_polinsz);
+
+        while (gO.transform.position != rdm3) {
+            gO.transform.position = Vector3.MoveTowards(gO.transform.position, rdm3, vel_polinsz);
             yield return new WaitForFixedUpdate();
         }
 
-
-        //particle.Stop();
-        //Destroy(aux);
-
+        Destroy(gO);
         yield return null;
     }
 
-
-    void Update()
-    {
-        if (Input.GetKeyDown("e"))
-            StartCoroutine(_polinizador(new Vector2Int( (int)(Random.value * 14), (int)(Random.value * 19) )));
-    }
-
     public bool noite;
-
-
 
     [SerializeField]
     RectTransform hr0, mn0;
@@ -262,12 +313,4 @@ public class Tempo : MonoBehaviour
 
     }
 
-
-    /*
-    private void OnGUI()
-    {
-        if((hora > 18) | (hora<5))
-            if (GUI.Button(new Rect(50, 70, 80, 40), "Dormir"))
-                SetTo(8);
-    }*/
 }

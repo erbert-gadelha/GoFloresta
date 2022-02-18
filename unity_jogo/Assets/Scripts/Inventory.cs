@@ -85,9 +85,8 @@ public class Inventory : MonoBehaviour
         if (_item[1] == null)
             return;
 
-        if (bolso[HUD.hud.opened_item.x, HUD.hud.opened_item.y] > 0)
-            bolso[HUD.hud.opened_item.x, HUD.hud.opened_item.y]--;
-        else
+        //    bolso[HUD.hud.opened_item.x, HUD.hud.opened_item.y]--;
+        if (bolso[HUD.hud.opened_item.x, HUD.hud.opened_item.y] <= 0)
             return;
 
         hand.gameObject.SetActive(false);

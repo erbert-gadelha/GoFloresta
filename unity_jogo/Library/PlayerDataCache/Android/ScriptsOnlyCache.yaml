@@ -29,8 +29,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
-    Unity.CollabProxy.Editor.dll:
-    - Unity.Cloud.Collaborate.UserInterface.WindowCache
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -92,41 +90,41 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1466}
+      Script: {instanceID: 1470}
     - Class: 114
-      Script: {instanceID: 1792}
+      Script: {instanceID: 1796}
     - Class: 114
-      Script: {instanceID: 2102}
+      Script: {instanceID: 2106}
     - Class: 114
-      Script: {instanceID: 2112}
+      Script: {instanceID: 2116}
     - Class: 114
-      Script: {instanceID: 2480}
+      Script: {instanceID: 2484}
     - Class: 114
-      Script: {instanceID: 2626}
+      Script: {instanceID: 2630}
     - Class: 114
-      Script: {instanceID: 2668}
+      Script: {instanceID: 2672}
     - Class: 114
-      Script: {instanceID: 2798}
+      Script: {instanceID: 2802}
     - Class: 114
-      Script: {instanceID: 3008}
+      Script: {instanceID: 3012}
     - Class: 114
-      Script: {instanceID: 3016}
+      Script: {instanceID: 3020}
     - Class: 114
-      Script: {instanceID: 3110}
+      Script: {instanceID: 3114}
     - Class: 114
-      Script: {instanceID: 3372}
+      Script: {instanceID: 3376}
     - Class: 114
-      Script: {instanceID: 3846}
+      Script: {instanceID: 3850}
     - Class: 114
-      Script: {instanceID: 3980}
+      Script: {instanceID: 3984}
     - Class: 114
-      Script: {instanceID: 4158}
-    - Class: 114
-      Script: {instanceID: 4254}
+      Script: {instanceID: 4162}
     - Class: 114
       Script: {instanceID: 4258}
     - Class: 114
-      Script: {instanceID: 4584}
+      Script: {instanceID: 4262}
+    - Class: 114
+      Script: {instanceID: 4588}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -185,55 +183,55 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1466}
+      Script: {instanceID: 1470}
     - Class: 114
-      Script: {instanceID: 1468}
+      Script: {instanceID: 1472}
     - Class: 114
-      Script: {instanceID: 1792}
+      Script: {instanceID: 1796}
     - Class: 114
-      Script: {instanceID: 1926}
+      Script: {instanceID: 1930}
     - Class: 114
-      Script: {instanceID: 2008}
+      Script: {instanceID: 2012}
     - Class: 114
-      Script: {instanceID: 2112}
+      Script: {instanceID: 2116}
     - Class: 114
-      Script: {instanceID: 2376}
+      Script: {instanceID: 2380}
     - Class: 114
-      Script: {instanceID: 2424}
+      Script: {instanceID: 2428}
     - Class: 114
-      Script: {instanceID: 2480}
+      Script: {instanceID: 2484}
     - Class: 114
-      Script: {instanceID: 2626}
+      Script: {instanceID: 2630}
     - Class: 114
-      Script: {instanceID: 2668}
+      Script: {instanceID: 2672}
     - Class: 114
-      Script: {instanceID: 2702}
+      Script: {instanceID: 2706}
     - Class: 114
-      Script: {instanceID: 2798}
+      Script: {instanceID: 2802}
     - Class: 114
-      Script: {instanceID: 3008}
+      Script: {instanceID: 3012}
     - Class: 114
-      Script: {instanceID: 3110}
+      Script: {instanceID: 3114}
     - Class: 114
-      Script: {instanceID: 3372}
+      Script: {instanceID: 3376}
     - Class: 114
-      Script: {instanceID: 3384}
+      Script: {instanceID: 3388}
     - Class: 114
-      Script: {instanceID: 3444}
+      Script: {instanceID: 3448}
     - Class: 114
-      Script: {instanceID: 3664}
+      Script: {instanceID: 3668}
     - Class: 114
-      Script: {instanceID: 3754}
+      Script: {instanceID: 3758}
     - Class: 114
-      Script: {instanceID: 3846}
+      Script: {instanceID: 3850}
     - Class: 114
-      Script: {instanceID: 4116}
+      Script: {instanceID: 4120}
     - Class: 114
-      Script: {instanceID: 4158}
+      Script: {instanceID: 4162}
     - Class: 114
-      Script: {instanceID: 4216}
+      Script: {instanceID: 4220}
     - Class: 114
-      Script: {instanceID: 4234}
+      Script: {instanceID: 4238}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
